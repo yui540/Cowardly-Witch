@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  rules: {
+    "no-console": 0,
+    "semi": [2, "never"],
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0
+  }
+}
