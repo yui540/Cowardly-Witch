@@ -12,6 +12,8 @@
     "semi": [2, "never"],
     "comma-dangle": 0,
     "react/jsx-filename-extension": 0,
-    "react/jsx-one-expression-per-line": 0
+    "react/jsx-one-expression-per-line": 0,
+    "import/prefer-default-export": 0,
+    "Empty components are self-closing": 0
   }
 }

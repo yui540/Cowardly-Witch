@@ -1,9 +1,6 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
-
-const Home = () => (
-  <h1>臆病な魔女</h1>
-)
+import Home from '../containers/Home'
 
 export default () => (
   <Router>
