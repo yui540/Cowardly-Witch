@@ -1,0 +1,62 @@
+.prologue {
+  position: absolute;
+  top: 0; left:0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+/**
+ * bg
+ */
+.prologue__bg {
+  position: absolute;
+  top: -25%; left: 50%;
+  width: 200%; height: 200%;
+  transform: rotate(20deg);
+  opacity: 0;
+
+  &::after {
+    content: ""; display: block;
+    width: 100%; height: 100%;
+    background-color: #43445B;
+    opacity: 0.4;
+  }
+}
+
+/**
+ * frame
+ */
+.prologue__frame {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  &::before,
+  &::after {
+    content: ""; display: block;
+    position: absolute;
+    width: 200%; height: 100%;
+    background-color: #43445B;
+    transform: rotate(0deg);
+  }
+  &::before {
+    right: 0; bottom: 100%;
+    transform-origin: right bottom;
+  }
+  &::after {
+    left: 0; top: 100%;
+    transform-origin: left top;
+  }
+}
+
+
+/*************************************************************************************
+ * animation
+ *************************************************************************************/
+.prologue {
+  .prologue__bg { animation: prologue__bg 0.8s ease 0s forwards; }
+  .prologue__frame {
+    &::before,
+    &::after { animation: prologue__frame 1s ease 0.2s forwards; }
+  }
+}

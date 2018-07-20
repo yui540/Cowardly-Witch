@@ -1,0 +1,9 @@
+@keyframes prologue__bg {
+  from { transform: translateX(100px) rotate(20deg); opacity: 0; }
+  to   { transform: translateX(0px) rotate(20deg); opacity: 1; }
+}
+
+@keyframes prologue__frame {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-2deg); }
+}
