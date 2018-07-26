@@ -8,9 +8,13 @@
 }
 
 
-@keyframes rotate360 {
+@keyframes turn1 {
   from { transform: rotate(0deg); }
   to   { transform: rotate(1turn); }
+}
+@keyframes -turn1 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-1turn); }
 }
 
 
@@ -29,4 +33,16 @@
 @keyframes slide-bottom {
   from { transform: translateY(-100%); }
   to   { transform: translateY(0%); }
+}
+
+
+@keyframes width0-100per {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+
+@keyframes scale0-1 {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
 }

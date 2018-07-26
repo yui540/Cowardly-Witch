@@ -1,0 +1,43 @@
+@keyframes prologue__bg {
+  from { transform: translateX(100px) rotate(20deg); opacity: 0; }
+  to   { transform: translateX(0px) rotate(20deg); opacity: 1; }
+}
+
+@keyframes prologue__bloom-flower {
+  0%   { transform: scale(0); opacity: 0; }
+  50%  { transform: scale(2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes prologue__show-search-btn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to   { transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes prologue__turn-search-wrapper {
+  0%   { transform: rotate(0deg); }
+  60%  { transform: rotate(-370deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes prologue__scale-box {
+  0%   { transform: scale(0); }
+  60%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes prologue__input-word {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  50%  { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes prologue__input-word__sp {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  50%  { transform: translateY(4px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes prologue__end {
+  from { transform: scale(0) rotate(0deg); }
+  to   { transform: scale(1) rotate(-90deg); }
+}
