@@ -1,5 +1,5 @@
 # 臆病な魔女
-![poster](./docs/poster.png)
+![poster](./res/poster.png)
 
 『臆病な魔女は、Webサイトに魔法をかけた。』
 
