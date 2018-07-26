@@ -1,5 +1,5 @@
 import React from 'react'
-import Prologue from './Prologue'
+import Prologue from '../containers/Prologue'
 
 export default ({ chapter, description }) => {
   if (chapter === 'Prologue') {

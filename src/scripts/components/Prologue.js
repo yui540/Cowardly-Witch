@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="prologue">
     <div className="prologue__bg"></div>
     <div className="prologue__frame"></div>
@@ -41,7 +41,7 @@ export default () => (
     <div className="prologue__end">
       <div></div>
       <div></div>
-      <div></div>
+      <div onAnimationEnd={changeChapter}></div>
     </div>
   </div>
 )
