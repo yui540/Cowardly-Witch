@@ -1,5 +1,6 @@
 import React from 'react'
 import Prologue from '../containers/Prologue'
+import Version1 from '../containers/Version1'
 
 export default ({ chapter, description }) => {
   if (chapter === 'Prologue') {
@@ -10,6 +11,8 @@ export default ({ chapter, description }) => {
   switch (chapter) {
     case 'Prologue':
       return <Prologue />
+    case 'Version_1':
+      return <Version1 />
     default:
       return <h1>臆病な魔女</h1>
   }

@@ -6,10 +6,7 @@ const mapPropsToState = () => ({})
 
 const mapDispatchToProps = dispatch => ({
   changeChapter() {
-    dispatch(changeChapter(
-      'Version_1',
-      'それは、優しい幻想。そして、悲しい現実。'
-    ))
+    dispatch(changeChapter('Version_1', 'それは、優しい幻想。そして、悲しい現実。'))
   }
 })
 
