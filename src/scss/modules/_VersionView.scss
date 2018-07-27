@@ -3,6 +3,7 @@
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: #43445B;
+  overflow: hidden;
 }
 
 /**
@@ -41,7 +42,6 @@
 
   div {
     position: absolute;
-    width: 80px; height: 80px;
     opacity: 0;
 
     &::before,
@@ -50,28 +50,58 @@
       position: absolute;
       background-color: #fff;
     }
-    &::before { width: 100%; height: 5px; }
-    &::after  { width: 5px; height: 100%; }
+    &::before { width: 100%; }
+    &::after  { height: 100%; }
   }
   div:nth-child(1) {
-    top: 30px; left: 30px;
-    &::before,
-    &::after { top: 0; left: 0; }
+    &::before, &::after { top: 0; left: 0; }
   }
   div:nth-child(2) {
-    top: 30px; right: 30px;
-    &::before,
-    &::after { top: 0; right: 0; }
+    &::before, &::after { top: 0; right: 0; }
   }
   div:nth-child(3) {
-    bottom: 30px; left: 30px;
-    &::before,
-    &::after { bottom: 0; left: 0; }
+    &::before, &::after { bottom: 0; left: 0; }
   }
   div:nth-child(4) {
+    &::before, &::after { bottom: 0; right: 0; }
+  }
+}
+@include pc-layout {
+  .version-view__frame div {
+    width: 80px; height: 80px;
+    &::before { height: 5px; }
+    &::after  { width: 5px; }
+  }
+  .version-view__frame div:nth-child(1) {
+    top: 30px; left: 30px;
+  }
+  .version-view__frame div:nth-child(2) {
+    top: 30px; right: 30px;
+  }
+  .version-view__frame div:nth-child(3) {
+    bottom: 30px; left: 30px;
+  }
+  .version-view__frame div:nth-child(4) {
     bottom: 30px; right: 30px;
-    &::before,
-    &::after { bottom: 0; right: 0; }
+  }
+}
+@include sp-layout {
+  .version-view__frame div {
+    width: 40px; height: 40px;
+    &::before { height: 3px; }
+    &::after  { width: 3px; }
+  }
+  .version-view__frame div:nth-child(1) {
+    top: 10px; left: 10px;
+  }
+  .version-view__frame div:nth-child(2) {
+    top: 10px; right: 10px;
+  }
+  .version-view__frame div:nth-child(3) {
+    bottom: 10px; left: 10px;
+  }
+  .version-view__frame div:nth-child(4) {
+    bottom: 10px; right: 10px;
   }
 }
 
@@ -80,8 +110,6 @@
  */
 .version-view__rect {
   position: absolute;
-  top: 50px; left: 50px;
-  width: calc(100% - 100px); height: calc(100% - 100px);
 
   div {
     position: absolute;
@@ -114,6 +142,18 @@
     &::after { transform: translateY(100%); }
   }
 }
+@include pc-layout {
+  .version-view__rect {
+    top: 50px; left: 50px;
+    width: calc(100% - 100px); height: calc(100% - 100px);
+  }
+}
+@include sp-layout {
+  .version-view__rect {
+    top: 20px; left: 20px;
+    width: calc(100% - 40px); height: calc(100% - 40px);
+  }
+}
 
 /**
  * body
@@ -131,7 +171,6 @@
 /*** text ***/
 .version-view__text {
   position: relative;
-  width: 600px; height: 50px;
 
   &::before,
   div {
@@ -144,7 +183,6 @@
   &::before {
     box-sizing: border-box;
     border: solid 1px #fff;
-    background-size: auto 70%;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
@@ -167,11 +205,17 @@
 .version-view__text_type_1::before {
   background-image: url(../images/version-view/v1/text.svg); 
 }
+@include pc-layout {
+  .version-view__text { width: 600px; height: 50px; }
+  .version-view__text::before { background-size: auto 70%; }
+}
+@include sp-layout {
+  .version-view__text { width: calc(100% - 60px); height: 40px; }
+  .version-view__text::before { background-size: auto 55%; }
+}
 
 /*** label ***/
 .version-view__label {
-  width: 600px; height: 20px;
-  margin-top: 15px;
   overflow: hidden;
 
   &::after {
@@ -185,6 +229,18 @@
 }
 .version-view__label_type_1::after {
   background-image: url(../images/version-view/v1/label.svg);
+}
+@include pc-layout {
+  .version-view__label {
+    width: 600px; height: 20px;
+    margin-top: 15px;
+  }
+}
+@include sp-layout {
+  .version-view__label {
+    width: calc(100% - 60px); height: 15px;
+    margin-top: 10px;
+  }
 }
 
 
