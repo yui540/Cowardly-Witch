@@ -68,7 +68,7 @@
   }
   
   .bg-img {
-    background-image: url(../images/version_1/bg.svg);
+    background-image: url(../images/version_1/stage-1/bg.svg);
     opacity: 0;
   }
 
@@ -79,8 +79,8 @@
       background-position: center bottom;
       background-repeat: no-repeat;
     }
-    &::before { background-image: url(../images/version_1/silhouette/1.svg); }
-    &::after  { background-image: url(../images/version_1/silhouette/2.svg); }
+    &::before { background-image: url(../images/version_1/stage-1/silhouette/1.svg); }
+    &::after  { background-image: url(../images/version_1/stage-1/silhouette/2.svg); }
   }
   
   .message {
@@ -105,15 +105,15 @@
       }
     }
     div:nth-child(1) {
-      background-image: url(../images/version_1/message/1.svg);
+      background-image: url(../images/version_1/stage-1/message/1.svg);
       background-position: center 10%;
     }
     div:nth-child(2) {
-      background-image: url(../images/version_1/message/2.svg);
+      background-image: url(../images/version_1/stage-1/message/2.svg);
       background-position: center 90%;
     }
     div:nth-child(3) {
-      background-image: url(../images/version_1/message/3.svg);
+      background-image: url(../images/version_1/stage-1/message/3.svg);
       background-position: center;
     }
   }
@@ -191,7 +191,7 @@
   }
   .silhouette {
     animation: version-1__show-silhouette 1s ease 3.5s forwards;
-    &::after { animation: fadeout 1.5s ease-out 4s forwards; }
+    &::after { animation: fadeout 0.8s ease-out 4s forwards; }
   }
 }
 .version-1__stage { animation: version-1__rotate-stage 1.2s ease 5s forwards; }
