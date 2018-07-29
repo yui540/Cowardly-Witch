@@ -1,7 +1,7 @@
 import React from 'react'
 import VersionView from './VersionView'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="version-1">
     <VersionView version="1" />
     <div className="version-1__stage">
@@ -61,7 +61,7 @@ export default () => (
         <div className="end">
           <div></div>
           <div></div>
-          <div></div>
+          <div onAnimationEnd={changeChapter}></div>
         </div>
       </div>
     </div>
