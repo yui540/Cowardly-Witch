@@ -1,9 +1,11 @@
 import { CHANGE_CHAPTER } from '../constants/opening'
 import config from '../config/opening.json'
 
+const chapter = 'Prologue'
+const description = config[chapter]
 const init = {
-  chapter: 'Version_1',
-  description: config.Prologue
+  chapter,
+  description
 }
 
 export default (state = init, action) => {

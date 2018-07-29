@@ -1,12 +1,15 @@
 import { connect } from 'react-redux'
 import Prologue from '../components/Prologue'
 import { changeChapter } from '../actions/opening'
+import config from '../config/opening.json'
 
 const mapPropsToState = () => ({})
 
 const mapDispatchToProps = dispatch => ({
   changeChapter() {
-    dispatch(changeChapter('Version_1', 'それは、優しい幻想。そして、悲しい現実。'))
+    const chapter = 'Version_1'
+    const description = config[chapter]
+    dispatch(changeChapter(chapter, description))
   }
 })
 
