@@ -23,13 +23,18 @@
   }
   &::before {
     background-image: url(../images/version-view/bg.svg);
-    background-size: 40px;
     opacity: 0.3;
   }
   &::after {
     background-color: #43445B;
     transform-origin: right top;
   }
+}
+@include pc-layout {
+  .version-view__bg::before { background-size: 40px; }
+}
+@include sp-layout {
+  .version-view__bg::before { background-size: 20px; }
 }
 
 /**
@@ -205,6 +210,21 @@
 .version-view__text_type_1::before {
   background-image: url(../images/version-view/v1/text.svg); 
 }
+.version-view__text_type_2::before {
+  background-image: url(../images/version-view/v2/text.svg); 
+}
+.version-view__text_type_3::before {
+  background-image: url(../images/version-view/v3/text.svg); 
+}
+.version-view__text_type_4::before {
+  background-image: url(../images/version-view/v4/text.svg); 
+}
+.version-view__text_type_5::before {
+  background-image: url(../images/version-view/v5/text.svg); 
+}
+.version-view__text_type_6::before {
+  background-image: url(../images/version-view/v6/text.svg); 
+}
 @include pc-layout {
   .version-view__text { width: 600px; height: 50px; }
   .version-view__text::before { background-size: auto 70%; }
@@ -229,6 +249,21 @@
 }
 .version-view__label_type_1::after {
   background-image: url(../images/version-view/v1/label.svg);
+}
+.version-view__label_type_2::after {
+  background-image: url(../images/version-view/v2/label.svg);
+}
+.version-view__label_type_3::after {
+  background-image: url(../images/version-view/v3/label.svg);
+}
+.version-view__label_type_4::after {
+  background-image: url(../images/version-view/v4/label.svg);
+}
+.version-view__label_type_5::after {
+  background-image: url(../images/version-view/v5/label.svg);
+}
+.version-view__label_type_6::after {
+  background-image: url(../images/version-view/v6/label.svg);
 }
 @include pc-layout {
   .version-view__label {
