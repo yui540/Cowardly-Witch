@@ -1,0 +1,525 @@
+.version-1 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+
+  &::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #333;
+    opacity: 0;
+  }
+}
+
+/**
+ * stage
+ */
+.version-1__stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 200%;
+  z-index: 1;
+}
+
+/**
+ * stage-1, stage-2
+ */
+.version-1__stage-1,
+.version-1__stage-2 {
+  position: absolute; left: 0;
+  width: 100%; height: 50%;
+  overflow: hidden;
+}
+
+/**
+ * stage-1
+ */
+.version-1__stage-1 { top: 0; }
+
+/*** fantasy ***/
+.version-1__fantasy {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 100%;
+
+  .bg,
+  .bg-img,
+  .silhouette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+  }
+
+  .bg {
+    background-color: #eee;
+    transform: translateY(-100%);
+  }
+  
+  .bg-img {
+    background-image: url(../images/version_1/stage-1/bg.svg);
+    opacity: 0;
+  }
+
+  .silhouette {
+    opacity: 0;
+    &::before,
+    &::after {
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+    &::before { background-image: url(../images/version_1/stage-1/silhouette/1.svg); }
+    &::after  { background-image: url(../images/version_1/stage-1/silhouette/2.svg); }
+  }
+  
+  .message {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute; top: 0;
+      height: 100%;
+      background-color: black;
+      background-size: 65% auto;
+      background-repeat: no-repeat;
+      opacity: 0;
+
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: white;
+      }
+    }
+    div:nth-child(1) {
+      background-image: url(../images/version_1/stage-1/message/1.svg);
+      background-position: center 10%;
+    }
+    div:nth-child(2) {
+      background-image: url(../images/version_1/stage-1/message/2.svg);
+      background-position: center 90%;
+    }
+    div:nth-child(3) {
+      background-image: url(../images/version_1/stage-1/message/3.svg);
+      background-position: center;
+    }
+  }
+}
+@include pc-layout {
+  .version-1__fantasy {
+    .bg {
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    .bg-img { background-size: 30px; }
+    .silhouette::before,
+    .silhouette::after { background-size: auto 80%; }
+    .message {
+      div { width: 40px; }
+      div:nth-child(1) { left: 10%; }
+      div:nth-child(2) { right: 10%; }
+      div:nth-child(3) { left: calc(50% - 20px); }
+    }
+  }
+}
+@include sp-layout {
+  .version-1__fantasy {
+    .bg {
+      border-bottom-left-radius: 20%;
+      border-bottom-right-radius: 20%;
+    }
+    .bg-img { background-size: 15px; }
+    .silhouette::before,
+    .silhouette::after { background-size: auto 50%; }
+    .message {
+      div { width: 30px; }
+      div:nth-child(1) { left: 0; }
+      div:nth-child(2) { right: 0; }
+      div:nth-child(3) { left: calc(50% - 15px); }
+    }
+  }
+}
+
+/**
+ * stage-2
+ */
+.version-1__stage-2 {
+  bottom: 0;
+  background-color: #333;
+  transform: rotate(180deg);
+
+  .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    background-image: url(../images/version_1/stage-2/bg.svg);
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      width: 50%; height: 100%;
+      background-color: #333;
+    }
+  }
+
+  .toiro {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(../images/version_1/stage-2/toiro.svg);
+    background-size: auto 70%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bullet {
+    position: absolute;
+    top: calc(50% - 20px); left: 0;
+    width: 100%;
+
+    .label-1 {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background-color: #fff;
+      background-image: url(../images/version_1/stage-2/label-1.svg);
+      background-size: 90% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+
+      &::before,
+      &::after { content: ""; display: block; position: absolute; }
+      &::before {
+        right: 0; transform: translateX(100%);
+        width: 0; height: 0;
+      }
+      &::after {
+        width: 100%; height: 100%;
+        background-color: #fff;
+      }
+    }
+    .label-2 {
+      position: absolute;
+      top: 0; right: 0;
+      height: 100%;
+      background-image: url(../images/version_1/stage-2/label-2.svg);
+      background-size: 90% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+    }
+    .line {
+      position: absolute; top: 0;
+      height: 100%;
+      overflow: hidden;
+
+      div {
+        position: absolute; left: 0;
+        width: 100%;
+        background-color: #fff;
+        transform: translateX(-100%);
+      }
+      div:nth-child(1) { top: 0; left: -50px }
+      div:nth-child(3) { bottom: 0; left: -50px; }
+    }
+  }
+
+  .wall {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+
+    .left,
+    .right {
+      position: relative;
+      height: 100%;
+
+      div {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: #fff;
+        transform: translateY(100%);
+      }
+      div:nth-child(1),
+      div:nth-child(2) { opacity: 0.3; }
+    }
+
+    .text {
+      height: 100%;
+      background-image: url(../images/version_1/stage-2/text.svg);
+      background-position: center;
+      background-size: 55% auto;
+      background-repeat: no-repeat;
+      background-color: #000;
+      transform: translateY(-100%);
+
+      &::after {
+        content: ""; display: block;
+        width: 100%; height: 100%;
+        background-color: #fff;
+      }
+    }
+  }
+  .message {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+
+    div {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background-size: 55% auto;
+      background-repeat: no-repeat;
+      background-color: #000;
+
+      &::after {
+        content: ""; display: block;
+        width: 100%; height: 100%;
+        background-color: #fff;
+      }
+    }
+    div:nth-child(1) { background-image: url(../images/version_1/stage-2/message/1.svg); }
+    div:nth-child(2) { background-image: url(../images/version_1/stage-2/message/2.svg); }
+  }
+  .word {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-100%);
+
+    div {
+      width: 12.5vh; height: 12.5vh;
+      background-size: auto 90%;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0;
+    }
+    div:nth-child(1) { background-image: url(../images/version_1/stage-2/word/1.svg); }
+    div:nth-child(2) { background-image: url(../images/version_1/stage-2/word/2.svg); }
+    div:nth-child(3) { background-image: url(../images/version_1/stage-2/word/3.svg); }
+    div:nth-child(4) { background-image: url(../images/version_1/stage-2/word/4.svg); }
+    div:nth-child(5) { background-image: url(../images/version_1/stage-2/word/5.svg); }
+    div:nth-child(6) { background-image: url(../images/version_1/stage-2/word/6.svg); }
+    div:nth-child(7) { background-image: url(../images/version_1/stage-2/word/7.svg); }
+    div:nth-child(8) { background-image: url(../images/version_1/stage-2/word/8.svg); }
+  }
+  .end {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      width: 100vmax; height: 100vmax;
+      transform: scale(0);
+    }
+    div:nth-child(1) {
+      top: -50vmax; left: -50vmax;
+      background-color: #ebcb8b;
+    }
+    div:nth-child(2) {
+      bottom: -50vmax; right: -50vmax;
+      background-color: #c56370;
+    }
+    div:nth-child(3) {
+      top: calc(50% - 50vmax); right: calc(50% - 50vmax);
+      background-color: #43445b;
+    }
+  }
+}
+@include pc-layout {
+  .version-1__stage-2 {
+    .bg { background-size: 30px; }
+    .bullet {
+      height: 40px;
+
+      .label-1,
+      .label-2 { width: 200px; }
+      .label-1::before {
+        border-left: solid 20px #fff;
+        border-top: solid 20px transparent;
+        border-bottom: solid 20px transparent;
+      }
+      .line {
+        left: 200px;
+        width: calc(100% - 400px);
+        div { height: 1px; }
+        div:nth-child(2) { top: calc(50% - 0.5px); }
+      }
+    }
+    .wall {
+      .left, .right { width: calc(50% - 20px); }
+      .text { width: 40px; }
+    }
+    .message {
+      div { width: 40px; }
+      div:nth-child(1) {
+        right: calc(50% + 25px);
+        background-position: center 5%;
+      }
+      div:nth-child(2) {
+        left: calc(50% + 25px);
+        background-position: center 95%;
+      }
+    }
+  }
+}
+@include sp-layout {
+  .version-1__stage-2 {
+    .bg { background-size: 15px; }
+    .bullet {
+      height: 20px;
+
+      .label-1,
+      .label-2 { width: 75px; }
+      .label-1::before {
+        border-left: solid 10px #fff;
+        border-top: solid 10px transparent;
+        border-bottom: solid 10px transparent;
+      }
+      .line {
+        left: 75px;
+        width: calc(100% - 150px);
+        div { height: 1px; }
+        div:nth-child(1),
+        div:nth-child(3) { left: -20px; }
+        div:nth-child(2) { top: calc(50% - 0.5px); }
+      }
+    }
+    .wall {
+      .left, .right { width: calc(50% - 15px); }
+      .text { width: 30px; }
+    }
+    .message {
+      div { width: 30px; }
+      div:nth-child(1) {
+        right: calc(50% + 20px);
+        background-position: center 5%;
+      }
+      div:nth-child(2) {
+        left: calc(50% + 20px);
+        background-position: center 95%;
+      }
+    }
+  }
+}
+
+
+/***********************************************************************************
+ * animation 
+ ***********************************************************************************/
+.version-1::after { animation: fadein 0.05s ease 2.8s forwards; }
+@include pc-layout {
+  .version-1__fantasy .bg { animation: version-1__fail-bg 0.6s ease-out 2.2s forwards; }
+}
+@include sp-layout {
+  .version-1__fantasy .bg { animation: version-1__fail-bg__sp 0.6s ease-out 2.2s forwards; }
+}
+.version-1__fantasy {
+  .bg-img { animation: version-1__show-bg-img 0.8s ease-out 2.7s forwards; }
+  .message {
+    div:nth-child(1) {
+      animation:
+        fadein 0.1s ease 3s forwards,
+        slide-bottom 0.5s ease 4s reverse forwards;
+      &::after { animation: slide-bottom 0.5s ease-in 3s reverse forwards; }
+    }
+    div:nth-child(2) {
+      animation:
+        fadein 0.1s ease 3s forwards,
+        slide-top 0.5s ease 4s reverse forwards;
+      &::after { animation: slide-top 0.5s ease-in 3s reverse forwards; }
+    }
+    div:nth-child(3) {
+      animation: fadein 0.1s ease 4.2s forwards;
+      &::after { animation: slide-top 0.7s ease-in 4.2s reverse forwards; }
+    }
+  }
+  .silhouette {
+    animation: version-1__show-silhouette 1s ease 3.5s forwards;
+    &::after { animation: fadeout 0.8s ease-out 4s forwards; }
+  }
+}
+.version-1__stage { animation: version-1__rotate-stage 1.2s ease 5s forwards; }
+
+.version-1__stage-2 {
+  .bg {
+    &::before { animation: slide-right 0.5s ease-in 5.5s reverse forwards; }
+    &::after  { animation: slide-left 0.5s ease-in 5.5s reverse forwards; }
+  }
+  .bullet {
+    .label-1 {
+      animation:
+        fadein 0.3s ease 6s forwards,
+        slide-right 0.3s ease 6s forwards;
+      &::after { animation: slide-right 0.3s ease 6.2s reverse forwards; }
+    }
+    .line {
+      div:nth-child(2) { animation: version-1__slide-line 1.4s linear 6.2s forwards; }
+      div:nth-child(1) { animation: version-1__slide-line 1.4s linear 6.3s forwards; }
+      div:nth-child(3) { animation: version-1__slide-line 1.4s linear 6.4s forwards; }
+    }
+    .label-2 { animation: version-1__show-label-2 0.7s ease-out 6.4s forwards; }
+  }
+  .wall {
+    .left {
+      div:nth-child(1) { animation: slide-bottom 0.5s ease 6.8s forwards; }
+      div:nth-child(2) { animation: slide-bottom 0.5s ease 6.9s forwards; }
+      div:nth-child(3) { animation: slide-bottom 0.5s ease 7.0s forwards; }
+    }
+    .right {
+      div:nth-child(1) { animation: slide-top 0.5s ease 6.8s forwards; }
+      div:nth-child(2) { animation: slide-top 0.5s ease 6.9s forwards; }
+      div:nth-child(3) { animation: slide-top 0.5s ease 7.0s forwards; }
+    }
+    .text {
+      animation: slide-bottom 0.5s ease 7.5s forwards;
+      &::after { animation: slide-top 0.5s ease 7.8s reverse forwards; }
+    }
+  }
+  .message {
+    animation: fadein 0.1s ease 7.5s forwards;
+    div:nth-child(1)::after { animation: slide-bottom 0.5s ease 8.2s reverse forwards; }
+    div:nth-child(2)::after { animation: slide-top 0.5s ease 8.6s reverse forwards; }
+  }
+  .word {
+    animation: slide-bottom 0.5s ease 9.3s forwards;
+    div:nth-child(1) { animation: version-1__show-word 0.4s ease 9.7s forwards; }
+    div:nth-child(2) { animation: version-1__show-word 0.4s ease 9.8s forwards; }
+    div:nth-child(3) { animation: version-1__show-word 0.4s ease 9.9s forwards; }
+    div:nth-child(4) { animation: version-1__show-word 0.4s ease 10s forwards; }
+    div:nth-child(5) { animation: version-1__show-word 0.4s ease 10.1s forwards; }
+    div:nth-child(6) { animation: version-1__show-word 0.4s ease 10.2s forwards; }
+    div:nth-child(7) { animation: version-1__show-word 0.4s ease 10.3s forwards; }
+    div:nth-child(8) { animation: version-1__show-word 0.4s ease 10.4s forwards; }
+  }
+  .end {
+    div:nth-child(1) { animation: version-1__end 0.6s ease 10.7s forwards; }
+    div:nth-child(2) { animation: version-1__end 0.6s ease 10.8s forwards; }
+    div:nth-child(3) { animation: version-1__end 0.6s ease 10.9s forwards; }
+  }
+}

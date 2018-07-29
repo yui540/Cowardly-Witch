@@ -1,0 +1,272 @@
+.version-view {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #43445B;
+  overflow: hidden;
+}
+
+/**
+ * bg
+ */
+.version-view__bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  &::before,
+  &::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  &::before {
+    background-image: url(../images/version-view/bg.svg);
+    background-size: 40px;
+    opacity: 0.3;
+  }
+  &::after {
+    background-color: #43445B;
+    transform-origin: right top;
+  }
+}
+
+/**
+ * frame
+ */
+.version-view__frame {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  div {
+    position: absolute;
+    opacity: 0;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      background-color: #fff;
+    }
+    &::before { width: 100%; }
+    &::after  { height: 100%; }
+  }
+  div:nth-child(1) {
+    &::before, &::after { top: 0; left: 0; }
+  }
+  div:nth-child(2) {
+    &::before, &::after { top: 0; right: 0; }
+  }
+  div:nth-child(3) {
+    &::before, &::after { bottom: 0; left: 0; }
+  }
+  div:nth-child(4) {
+    &::before, &::after { bottom: 0; right: 0; }
+  }
+}
+@include pc-layout {
+  .version-view__frame div {
+    width: 80px; height: 80px;
+    &::before { height: 5px; }
+    &::after  { width: 5px; }
+  }
+  .version-view__frame div:nth-child(1) {
+    top: 30px; left: 30px;
+  }
+  .version-view__frame div:nth-child(2) {
+    top: 30px; right: 30px;
+  }
+  .version-view__frame div:nth-child(3) {
+    bottom: 30px; left: 30px;
+  }
+  .version-view__frame div:nth-child(4) {
+    bottom: 30px; right: 30px;
+  }
+}
+@include sp-layout {
+  .version-view__frame div {
+    width: 40px; height: 40px;
+    &::before { height: 3px; }
+    &::after  { width: 3px; }
+  }
+  .version-view__frame div:nth-child(1) {
+    top: 10px; left: 10px;
+  }
+  .version-view__frame div:nth-child(2) {
+    top: 10px; right: 10px;
+  }
+  .version-view__frame div:nth-child(3) {
+    bottom: 10px; left: 10px;
+  }
+  .version-view__frame div:nth-child(4) {
+    bottom: 10px; right: 10px;
+  }
+}
+
+/**
+ * rect
+ */
+.version-view__rect {
+  position: absolute;
+
+  div {
+    position: absolute;
+    overflow: hidden;
+
+    &::after {
+      content: ""; display: block;
+      width: 100%; height: 100%;
+      background-color: #fff;
+    }
+  }
+  div:nth-child(1),
+  div:nth-child(3) { left: 0; width: 100%; height: 1px; }
+  div:nth-child(2),
+  div:nth-child(4) { top: 0; width: 1px; height: 100%; }
+  div:nth-child(1) {
+    top: 0;
+    &::after { transform: translateX(-100%); }
+  }
+  div:nth-child(2) {
+    left: 0;
+    &::after { transform: translateY(-100%); }
+  }
+  div:nth-child(3) {
+    bottom: 0;
+    &::after { transform: translateX(100%); }
+  }
+  div:nth-child(4) {
+    right: 0;
+    &::after { transform: translateY(100%); }
+  }
+}
+@include pc-layout {
+  .version-view__rect {
+    top: 50px; left: 50px;
+    width: calc(100% - 100px); height: calc(100% - 100px);
+  }
+}
+@include sp-layout {
+  .version-view__rect {
+    top: 20px; left: 20px;
+    width: calc(100% - 40px); height: calc(100% - 40px);
+  }
+}
+
+/**
+ * body
+ */
+.version-view__body {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*** text ***/
+.version-view__text {
+  position: relative;
+
+  &::before,
+  div {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  
+  &::before {
+    box-sizing: border-box;
+    border: solid 1px #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+
+  div {
+    display: flex;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      width: 50%; height: 100%;
+      background-color: #fff;
+    }
+    &::before { transform: translateX(-100%); }
+    &::after  { transform: translateX(100%); }
+  }
+}
+.version-view__text_type_1::before {
+  background-image: url(../images/version-view/v1/text.svg); 
+}
+@include pc-layout {
+  .version-view__text { width: 600px; height: 50px; }
+  .version-view__text::before { background-size: auto 70%; }
+}
+@include sp-layout {
+  .version-view__text { width: calc(100% - 60px); height: 40px; }
+  .version-view__text::before { background-size: auto 55%; }
+}
+
+/*** label ***/
+.version-view__label {
+  overflow: hidden;
+
+  &::after {
+    content: ""; display: block;
+    width: 100%; height: 100%;
+    background-size: auto 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-100%);
+  }
+}
+.version-view__label_type_1::after {
+  background-image: url(../images/version-view/v1/label.svg);
+}
+@include pc-layout {
+  .version-view__label {
+    width: 600px; height: 20px;
+    margin-top: 15px;
+  }
+}
+@include sp-layout {
+  .version-view__label {
+    width: calc(100% - 60px); height: 15px;
+    margin-top: 10px;
+  }
+}
+
+
+/**************************************************************************
+ * animation
+ **************************************************************************/
+.version-view__bg::after { animation: slide-top 0.6s ease-out 0s reverse forwards; }
+.version-view__frame {
+  div:nth-child(1) { animation: version-view__show-frame-1 0.6s ease 0.3s forwards; }
+  div:nth-child(2) { animation: version-view__show-frame-2 0.6s ease 0.3s forwards; }
+  div:nth-child(3) { animation: version-view__show-frame-3 0.6s ease 0.3s forwards; }
+  div:nth-child(4) { animation: version-view__show-frame-4 0.6s ease 0.3s forwards; }
+}
+.version-view__rect {
+  div:nth-child(1)::after { animation: slide-right 0.6s ease 0.6s forwards; }
+  div:nth-child(2)::after { animation: slide-bottom 0.6s ease 0.6s forwards; }
+  div:nth-child(3)::after { animation: slide-left 0.6s ease 0.6s forwards; }
+  div:nth-child(4)::after { animation: slide-top 0.6s ease 0.6s forwards; }
+}
+.version-view__text {
+  &::before { animation: fadein 0.05s ease 1.25s forwards; }
+  div {
+    &::before { animation: version-view__show-text-1 0.5s ease-in 1s forwards; }
+    &::after  { animation: version-view__show-text-2 0.5s ease-in 1s forwards; }
+  }
+}
+.version-view__label::after {
+  animation: slide-bottom 0.5s ease 1.4s forwards;
+}

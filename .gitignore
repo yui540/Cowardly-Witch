@@ -3,3 +3,4 @@ node_modules/
 yarn-error.log
 public/scripts/app.min.js
 public/stylesheets/style.css
+public/images/other
