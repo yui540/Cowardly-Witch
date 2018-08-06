@@ -137,7 +137,6 @@
 
     .poster-1 {
       background-image: url(../images/version_2/bg-1.svg);
-      background-size: 300px;
       background-position: center;
       background-color: #c56370;
 
@@ -151,6 +150,8 @@
       &::before { background-color: #fc90a2; }
       &::after  { background-color: #c56370; }
     }
+    @include pc-layout { .poster-1 { background-size: 300px; } }
+    @include sp-layout { .poster-1 { background-size: 100px; } }
 
     .poster-2 {
       .line-1,
@@ -165,7 +166,6 @@
       .line-2 {
         background-color: #ebcb8b;
         background-image: url(../images/version_2/bg-2.svg);
-        background-size: 300px;
         background-position: center;
 
         &::after {
@@ -175,6 +175,8 @@
         }
       }
     }
+    @include pc-layout { .poster-2 .line-2 { background-size: 300px; } }
+    @include sp-layout { .poster-2 .line-2 { background-size: 100px; } }
 
     .poster-3 {
       &::before,
