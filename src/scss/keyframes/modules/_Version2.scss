@@ -1,0 +1,26 @@
+@keyframes version-2__bg {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@keyframes version-2__fail-ball {
+  0%   { transform: scale(5); opacity: 0; }
+  40%  { transform: scale(1); opacity: 1; }
+  70%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes version-2__rotate-bar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}
+
+@keyframes version-2__light {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100%); }
+}
+
+@keyframes version-2__height-line {
+  from { height: 20px; top: calc(50% - 10px); }
+  to   { height: 100%; top: 0; }
+}
