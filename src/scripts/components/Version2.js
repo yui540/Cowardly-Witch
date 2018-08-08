@@ -48,5 +48,13 @@ export default () => (
         <div><span></span><span></span><span></span></div>
       </div>
     </div>
+    <div className="version-2__stage-2">
+      <div className="shutter"></div>
+      <div className="satella"></div>
+      <div className="end">
+        <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
+      </div>
+    </div>
   </div>
 )
