@@ -282,6 +282,56 @@
   }
 }
 
+/**
+ * stage-2
+ */
+.version-2__stage-2 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  .satella,
+  .shutter,
+  .end {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  /*** satella ***/
+  .satella {
+    background-image: url(../images/version_2/satella.svg);
+    background-size: auto 85%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+
+  /*** shutter ***/
+  .shutter {
+    display: flex;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      width: 50%; height: 100%;
+      background-color: #eee;
+      transform: translateY(100%);
+    }
+  }
+
+  /*** end ***/
+  .end {
+    display: flex;
+
+    div {
+      width: 12.5%; height: 100%;
+      background-color: #43445b;
+      transform: translateY(100%);
+    }
+  }
+}
+
 
 /*****************************************************************************
  * animation
@@ -432,5 +482,22 @@
     div:nth-child(10) span:nth-child(3) { animation: version-2__light 1s ease 9.3s forwards; }
     div:nth-child(11) span:nth-child(3) { animation: version-2__light 1s ease 9.4s forwards; }
     div:nth-child(12) span:nth-child(3) { animation: version-2__light 1s ease 9.5s forwards; }
+  }
+}
+.version-2__stage-2 {
+  .satella { animation: fadein 0.05s ease 10.7s forwards; }
+  .shutter {
+    &::before { animation: slide-bottom 0.5s ease 10.7s forwards; }
+    &::after  { animation: slide-top 0.5s ease 10.7s forwards; }
+  }
+  .end {
+    div:nth-child(1) { animation: slide-bottom 0.4s ease 11.2s forwards; }
+    div:nth-child(8) { animation: slide-top 0.4s ease 11.2s forwards; }
+    div:nth-child(2) { animation: slide-top 0.4s ease 11.3s forwards; }
+    div:nth-child(7) { animation: slide-bottom 0.4s ease 11.3s forwards; }
+    div:nth-child(3) { animation: slide-bottom 0.4s ease 11.4s forwards; }
+    div:nth-child(6) { animation: slide-top 0.4s ease 11.4s forwards; }
+    div:nth-child(4) { animation: slide-top 0.4s ease 11.5s forwards; }
+    div:nth-child(5) { animation: slide-bottom 0.4s ease 11.5s forwards; }
   }
 }
