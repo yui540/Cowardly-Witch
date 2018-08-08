@@ -1,0 +1,503 @@
+.version-2 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+/**
+ * bg
+ */
+.version-2__bg {
+  position: absolute;
+  top: calc(50% - 75vmax); left: calc(50% - 75vmax);
+  width: 150vmax; height: 150vmax;
+  
+  div {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+  div:nth-child(1) { background-color: #eee; }
+  div:nth-child(2) { background-color: #ebcb8b; }
+  div:nth-child(3) { background-color: #c56370; }
+  div:nth-child(4) { background-color: #3f3b52; }
+}
+
+/**
+ * stage-1
+ */
+.version-2__stage-1 {
+  position: absolute;
+  top: 0; left:0;
+  width: 100%; height: 100%;
+
+  /*** bar ***/
+  .bar {
+    position: absolute;
+    overflow: hidden;
+    
+    div { background-color: #eee; }
+  }
+
+  /*** text ***/
+  .text {
+    position: absolute;
+    opacity: 0;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  /*** circle ***/
+  .circle {
+    position: absolute;
+
+    div {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+    }
+    div:nth-child(1) {
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #242433;
+    }
+    div:nth-child(2) {
+      top: 5%; left: 5%;
+      width: 90%; height: 90%;
+      background-color: #4f4e66;
+    }
+    div:nth-child(3) {
+      top: 27.5%; left: 27.5%;
+      width: 45%; height: 45%;
+      background-color: #242433; 
+    }
+    div:nth-child(4) {
+      top: 37.5%; left: 37.5%;
+      width: 25%; height: 25%;
+      box-sizing: border-box;
+      border: solid 10px #4f4e66;
+    }
+  }
+
+  /*** shutter ***/
+  .shutter {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    section {
+      width: 100%; height: 50%;
+      display: flex;
+
+      div {
+        position: relative;
+        width: 10%; height: 100%;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+          content: ""; display: block;
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          transform: translateY(100%);
+        }
+        &::before { background-color: #ebcb8b; }
+        &::after  { background-color: #c56370; }
+      }
+    }
+  }
+
+  /*** poster ***/
+  .poster {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+
+      &::before,
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+      }
+    }
+
+    .poster-1 {
+      background-image: url(../images/version_2/bg-1.svg);
+      background-position: center;
+      background-color: #c56370;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: calc(50% - 75vmax); left: calc(50% - 75vmax);
+        width: 150vmax; height: 150vmax;
+        border-radius: 50%;
+      }
+      &::before { background-color: #fc90a2; }
+      &::after  { background-color: #c56370; }
+    }
+    @include pc-layout { .poster-1 { background-size: 300px; } }
+    @include sp-layout { .poster-1 { background-size: 100px; } }
+
+    .poster-2 {
+      .line-1,
+      .line-2 {
+        position: absolute;
+        top: calc(50% - 10px); left: 0;
+        width: 100%; height: 20px;
+        transform: translateX(100%);
+      }
+
+      .line-1 { background-color: #f9e4bd; }
+      .line-2 {
+        background-color: #ebcb8b;
+        background-image: url(../images/version_2/bg-2.svg);
+        background-position: center;
+
+        &::after {
+          content: ""; display: block;
+          width: 100%; height: 100%;
+          background-color: #ebcb8b;
+        }
+      }
+    }
+    @include pc-layout { .poster-2 .line-2 { background-size: 300px; } }
+    @include sp-layout { .poster-2 .line-2 { background-size: 100px; } }
+
+    .poster-3 {
+      &::before,
+      &::after {
+        width: 280vmax; height: 280vmax;
+        border-radius: 50%;
+        transform: scale(0);
+      }
+      &::before { bottom: -140vmax; left: -140vmax; background-color: #646482; }
+      &::after  { top: -140vmax; right: -140vmax; background-color: #3f3b52; }
+    }
+  }
+
+  /*** light ***/
+  .light {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      bottom: 50%; left: calc(50% - 1px);
+      height: 75vmax; width: 2px;
+      transform-origin: center bottom;
+      overflow: hidden;
+      
+      span {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: #fff;
+        transform: translateY(-100%);
+      }
+    }
+    div:nth-child(2)  { transform: rotate(30deg); }
+    div:nth-child(3)  { transform: rotate(60deg); }
+    div:nth-child(4)  { transform: rotate(90deg); }
+    div:nth-child(5)  { transform: rotate(120deg); }
+    div:nth-child(6)  { transform: rotate(150deg); }
+    div:nth-child(7)  { transform: rotate(180deg); }
+    div:nth-child(8)  { transform: rotate(210deg); }
+    div:nth-child(9)  { transform: rotate(240deg); }
+    div:nth-child(10) { transform: rotate(270deg); }
+    div:nth-child(11) { transform: rotate(300deg); }
+    div:nth-child(12) { transform: rotate(330deg); }
+  }
+}
+@include pc-layout {
+  .version-2__stage-1 {
+    .circle {
+      top: calc(50% - 100px); left: calc(50% - 100px);
+      width: 200px; height: 200px;
+    }
+    .text {
+      top: calc(50% - 100px); left: 0;
+      width: 100%; height: 200px;
+      display: flex;
+
+      &::before,
+      &::after { width: 50%; height: 100%; background-size: auto 65%; }
+      &::before { background-image: url(../images/version_2/text/pc-1.svg); }
+      &::after  { background-image: url(../images/version_2/text/pc-2.svg); }
+    }
+    .bar {
+      top: calc(50% - 100px); left: 50%;
+      width: 75vmax; height: 200px;
+      transform-origin: left center;
+
+      div { width: 100%; height: 20%; transform: translateX(-100%); }
+    }
+  }
+}
+@include sp-layout {
+  .version-2__stage-1 {
+    .circle {
+      top: calc(50% - 25vw); left: calc(50% - 25vw);
+      width: 50vw; height: 50vw;
+    }
+    .text {
+      top: 0; left: calc(50% - 25vw);
+      width: 50vw; height: 100%;
+
+      &::before,
+      &::after { width: 100%; height: 50%; background-size: auto 60%; }
+      &::before {
+        background-image: url(../images/version_2/text/sp-1.svg);
+        background-position-y: top;
+      }
+      &::after {
+        background-image: url(../images/version_2/text/sp-2.svg);
+        background-position-y: bottom;
+      }
+    }
+    .bar {
+      bottom: 50%; left: calc(50% - 25vw);
+      width: 50vw; height: 75%;
+      display: flex;
+      transform-origin: center bottom;
+
+      div { width: 20%; height: 100%; transform: translateY(-100%); }
+    }
+  }
+}
+
+/**
+ * stage-2
+ */
+.version-2__stage-2 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  .satella,
+  .shutter,
+  .end {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  /*** satella ***/
+  .satella {
+    background-image: url(../images/version_2/satella.svg);
+    background-size: auto 85%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+
+  /*** shutter ***/
+  .shutter {
+    display: flex;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      width: 50%; height: 100%;
+      background-color: #eee;
+      transform: translateY(100%);
+    }
+  }
+
+  /*** end ***/
+  .end {
+    display: flex;
+
+    div {
+      width: 12.5%; height: 100%;
+      background-color: #43445b;
+      transform: translateY(100%);
+    }
+  }
+}
+
+
+/*****************************************************************************
+ * animation
+ *****************************************************************************/
+.version-2__bg {
+  div:nth-child(1) { animation: version-2__bg 0.4s ease-in 2.2s forwards; }
+  div:nth-child(2) { animation: version-2__bg 0.4s ease-in 2.35s forwards; }
+  div:nth-child(3) { animation: version-2__bg 0.4s ease-in 2.5s forwards; }
+  div:nth-child(4) { animation: version-2__bg 0.4s ease-in 2.65s forwards; }
+}
+.version-2__stage-1 {
+  .circle {
+    div:nth-child(1) { animation: version-2__fail-ball 0.6s ease-in 3s forwards; }
+    div:nth-child(2) { animation: version-2__fail-ball 0.6s ease-in 3.2s forwards; }
+    div:nth-child(3) { animation: version-2__fail-ball 0.6s ease-in 3.4s forwards; }
+    div:nth-child(4) { animation: version-2__fail-ball 0.6s ease-in 3.6s forwards; }
+  }
+  @include pc-layout {
+    .bar {
+      animation: version-2__rotate-bar 0.6s ease 4.5s forwards;
+      div:nth-child(1) { animation: slide-right 0.4s ease 3.9s forwards; }
+      div:nth-child(2) { animation: slide-right 0.4s ease 4.1s forwards; }
+      div:nth-child(3) { animation: slide-right 0.4s ease 3.8s forwards; }
+      div:nth-child(4) { animation: slide-right 0.4s ease 4.2s forwards; }
+      div:nth-child(5) { animation: slide-right 0.4s ease 4.0s forwards; }
+    }
+  }
+  @include sp-layout {
+    .bar {
+      animation: version-2__rotate-bar 0.6s ease 4.5s forwards;
+      div:nth-child(1) { animation: slide-top 0.4s ease 3.9s forwards; }
+      div:nth-child(2) { animation: slide-top 0.4s ease 4.1s forwards; }
+      div:nth-child(3) { animation: slide-top 0.4s ease 3.8s forwards; }
+      div:nth-child(4) { animation: slide-top 0.4s ease 4.2s forwards; }
+      div:nth-child(5) { animation: slide-top 0.4s ease 4.0s forwards; }
+    }
+  }
+  .text { animation: fadein 0.05s ease 3.8s forwards; }
+  .shutter {
+    section:nth-child(1) {
+      div:nth-child(10)::before { animation: slide-bottom 0.4s ease 4.8s forwards; }
+      div:nth-child(9)::before  { animation: slide-bottom 0.4s ease 4.9s forwards; }
+      div:nth-child(8)::before  { animation: slide-bottom 0.4s ease 5.0s forwards; }
+      div:nth-child(7)::before  { animation: slide-bottom 0.4s ease 5.1s forwards; }
+      div:nth-child(6)::before  { animation: slide-bottom 0.4s ease 5.2s forwards; }
+      div:nth-child(5)::before  { animation: slide-bottom 0.4s ease 5.3s forwards; }
+      div:nth-child(4)::before  { animation: slide-bottom 0.4s ease 5.4s forwards; }
+      div:nth-child(3)::before  { animation: slide-bottom 0.4s ease 5.5s forwards; }
+      div:nth-child(2)::before  { animation: slide-bottom 0.4s ease 5.6s forwards; }
+      div:nth-child(1)::before  { animation: slide-bottom 0.4s ease 5.7s forwards; }
+      
+      div:nth-child(10)::after { animation: slide-bottom 0.4s ease 5.0s forwards; }
+      div:nth-child(9)::after  { animation: slide-bottom 0.4s ease 5.1s forwards; }
+      div:nth-child(8)::after  { animation: slide-bottom 0.4s ease 5.2s forwards; }
+      div:nth-child(7)::after  { animation: slide-bottom 0.4s ease 5.3s forwards; }
+      div:nth-child(6)::after  { animation: slide-bottom 0.4s ease 5.4s forwards; }
+      div:nth-child(5)::after  { animation: slide-bottom 0.4s ease 5.5s forwards; }
+      div:nth-child(4)::after  { animation: slide-bottom 0.4s ease 5.6s forwards; }
+      div:nth-child(3)::after  { animation: slide-bottom 0.4s ease 5.7s forwards; }
+      div:nth-child(2)::after  { animation: slide-bottom 0.4s ease 5.8s forwards; }
+      div:nth-child(1)::after  { animation: slide-bottom 0.4s ease 5.9s forwards; }
+    }
+    section:nth-child(2) {
+      div:nth-child(10)::before { animation: slide-top 0.4s ease 4.8s forwards; }
+      div:nth-child(9)::before  { animation: slide-top 0.4s ease 4.9s forwards; }
+      div:nth-child(8)::before  { animation: slide-top 0.4s ease 5.0s forwards; }
+      div:nth-child(7)::before  { animation: slide-top 0.4s ease 5.1s forwards; }
+      div:nth-child(6)::before  { animation: slide-top 0.4s ease 5.2s forwards; }
+      div:nth-child(5)::before  { animation: slide-top 0.4s ease 5.3s forwards; }
+      div:nth-child(4)::before  { animation: slide-top 0.4s ease 5.4s forwards; }
+      div:nth-child(3)::before  { animation: slide-top 0.4s ease 5.5s forwards; }
+      div:nth-child(2)::before  { animation: slide-top 0.4s ease 5.6s forwards; }
+      div:nth-child(1)::before  { animation: slide-top 0.4s ease 5.7s forwards; }
+      
+      div:nth-child(10)::after { animation: slide-top 0.4s ease 5.0s forwards; }
+      div:nth-child(9)::after  { animation: slide-top 0.4s ease 5.1s forwards; }
+      div:nth-child(8)::after  { animation: slide-top 0.4s ease 5.2s forwards; }
+      div:nth-child(7)::after  { animation: slide-top 0.4s ease 5.3s forwards; }
+      div:nth-child(6)::after  { animation: slide-top 0.4s ease 5.4s forwards; }
+      div:nth-child(5)::after  { animation: slide-top 0.4s ease 5.5s forwards; }
+      div:nth-child(4)::after  { animation: slide-top 0.4s ease 5.6s forwards; }
+      div:nth-child(3)::after  { animation: slide-top 0.4s ease 5.7s forwards; }
+      div:nth-child(2)::after  { animation: slide-top 0.4s ease 5.8s forwards; }
+      div:nth-child(1)::after  { animation: slide-top 0.4s ease 5.9s forwards; }
+    }
+  }
+  .poster {
+    animation: fadein 0.3s ease 6s forwards;
+    .poster-1 {
+      &::after { animation: scale0-1 0.9s ease 6s reverse forwards; }
+      &::before { animation: scale0-1 0.9s ease 6.4s reverse forwards; }
+    }
+    .poster-2 {
+      .line-1 {
+        animation:
+          slide-left 0.4s ease 7.5s forwards,
+          version-2__height-line 0.4s ease 7.9s forwards;
+      }
+      .line-2 {
+        animation:
+          slide-left 0.4s ease 8.2s forwards,
+          version-2__height-line 0.4s ease 8.6s forwards;
+        &::after { animation: slide-right 0.5s ease 9s reverse forwards; }
+      }
+    }
+    .poster-3 {
+      &::before { animation: scale0-1 1s ease 9.7s forwards; }
+      &::after  { animation: scale0-1 1s ease 9.9s forwards; }
+    }
+  }
+  .light {
+    animation: fadeout 0.05s ease 10.5s forwards;
+    div:nth-child(1) span:nth-child(1)  { animation: version-2__light 1s ease 6.0s forwards; }
+    div:nth-child(2) span:nth-child(1)  { animation: version-2__light 1s ease 6.1s forwards; }
+    div:nth-child(3) span:nth-child(1)  { animation: version-2__light 1s ease 6.2s forwards; }
+    div:nth-child(4) span:nth-child(1)  { animation: version-2__light 1s ease 6.3s forwards; }
+    div:nth-child(5) span:nth-child(1)  { animation: version-2__light 1s ease 6.4s forwards; }
+    div:nth-child(6) span:nth-child(1)  { animation: version-2__light 1s ease 6.5s forwards; }
+    div:nth-child(7) span:nth-child(1)  { animation: version-2__light 1s ease 6.6s forwards; }
+    div:nth-child(8) span:nth-child(1)  { animation: version-2__light 1s ease 6.7s forwards; }
+    div:nth-child(9) span:nth-child(1)  { animation: version-2__light 1s ease 6.8s forwards; }
+    div:nth-child(10) span:nth-child(1) { animation: version-2__light 1s ease 6.9s forwards; }
+    div:nth-child(11) span:nth-child(1) { animation: version-2__light 1s ease 7.0s forwards; }
+    div:nth-child(12) span:nth-child(1) { animation: version-2__light 1s ease 7.1s forwards; }
+
+    div:nth-child(1) span:nth-child(2)  { animation: version-2__light 1s ease 7.2s forwards; }
+    div:nth-child(2) span:nth-child(2)  { animation: version-2__light 1s ease 7.3s forwards; }
+    div:nth-child(3) span:nth-child(2)  { animation: version-2__light 1s ease 7.4s forwards; }
+    div:nth-child(4) span:nth-child(2)  { animation: version-2__light 1s ease 7.5s forwards; }
+    div:nth-child(5) span:nth-child(2)  { animation: version-2__light 1s ease 7.6s forwards; }
+    div:nth-child(6) span:nth-child(2)  { animation: version-2__light 1s ease 7.7s forwards; }
+    div:nth-child(7) span:nth-child(2)  { animation: version-2__light 1s ease 7.8s forwards; }
+    div:nth-child(8) span:nth-child(2)  { animation: version-2__light 1s ease 7.9s forwards; }
+    div:nth-child(9) span:nth-child(2)  { animation: version-2__light 1s ease 8.0s forwards; }
+    div:nth-child(10) span:nth-child(2) { animation: version-2__light 1s ease 8.1s forwards; }
+    div:nth-child(11) span:nth-child(2) { animation: version-2__light 1s ease 8.2s forwards; }
+    div:nth-child(12) span:nth-child(2) { animation: version-2__light 1s ease 8.3s forwards; }
+    
+    div:nth-child(1) span:nth-child(3)  { animation: version-2__light 1s ease 8.4s forwards; }
+    div:nth-child(2) span:nth-child(3)  { animation: version-2__light 1s ease 8.5s forwards; }
+    div:nth-child(3) span:nth-child(3)  { animation: version-2__light 1s ease 8.6s forwards; }
+    div:nth-child(4) span:nth-child(3)  { animation: version-2__light 1s ease 8.7s forwards; }
+    div:nth-child(5) span:nth-child(3)  { animation: version-2__light 1s ease 8.8s forwards; }
+    div:nth-child(6) span:nth-child(3)  { animation: version-2__light 1s ease 8.9s forwards; }
+    div:nth-child(7) span:nth-child(3)  { animation: version-2__light 1s ease 9.0s forwards; }
+    div:nth-child(8) span:nth-child(3)  { animation: version-2__light 1s ease 9.1s forwards; }
+    div:nth-child(9) span:nth-child(3)  { animation: version-2__light 1s ease 9.2s forwards; }
+    div:nth-child(10) span:nth-child(3) { animation: version-2__light 1s ease 9.3s forwards; }
+    div:nth-child(11) span:nth-child(3) { animation: version-2__light 1s ease 9.4s forwards; }
+    div:nth-child(12) span:nth-child(3) { animation: version-2__light 1s ease 9.5s forwards; }
+  }
+}
+.version-2__stage-2 {
+  .satella { animation: fadein 0.05s ease 10.7s forwards; }
+  .shutter {
+    &::before { animation: slide-bottom 0.5s ease 10.7s forwards; }
+    &::after  { animation: slide-top 0.5s ease 10.7s forwards; }
+  }
+  .end {
+    div:nth-child(1) { animation: slide-bottom 0.4s ease 11.2s forwards; }
+    div:nth-child(8) { animation: slide-top 0.4s ease 11.2s forwards; }
+    div:nth-child(2) { animation: slide-top 0.4s ease 11.3s forwards; }
+    div:nth-child(7) { animation: slide-bottom 0.4s ease 11.3s forwards; }
+    div:nth-child(3) { animation: slide-bottom 0.4s ease 11.4s forwards; }
+    div:nth-child(6) { animation: slide-top 0.4s ease 11.4s forwards; }
+    div:nth-child(4) { animation: slide-top 0.4s ease 11.5s forwards; }
+    div:nth-child(5) { animation: slide-bottom 0.4s ease 11.5s forwards; }
+  }
+}
