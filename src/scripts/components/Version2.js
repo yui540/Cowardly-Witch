@@ -1,7 +1,7 @@
 import React from 'react'
 import VersionView from './VersionView'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="version-2">
     <VersionView version="2" />
     <div className="version-2__bg">
@@ -53,7 +53,7 @@ export default () => (
       <div className="satella"></div>
       <div className="end">
         <div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div>
+        <div onAnimationEnd={changeChapter}></div><div></div><div></div><div></div>
       </div>
     </div>
   </div>
