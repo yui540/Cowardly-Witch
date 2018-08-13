@@ -1,0 +1,304 @@
+$version-3__theme-black: #4A3F55;
+$version-3__theme-green: #C3CE5F;
+$version-3__theme-pink: #C45C66;
+$version-3__theme-red: rgb(168, 30, 91);
+$version-3__theme-blue: #8DF8FB;
+$version-3__theme-mint: #4AA9A4;
+$version-3__theme-dark-mint: #444D5A;
+
+.version-3 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+
+  /**
+   * stage-1
+   */
+  .stage-1 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .stage-1__bg { /*** bg ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  .stage-1__bg .small-ball {
+    position: absolute;
+    width: 100vmin; height: 100vmin;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+  .stage-1__bg .small-ball:nth-child(1),
+  .stage-1__bg .small-ball:nth-child(2) {
+    left: -50vmin;
+    background-color: $version-3__theme-pink;
+  }
+  .stage-1__bg .small-ball:nth-child(3),
+  .stage-1__bg .small-ball:nth-child(4) {
+    right: -50vmin;
+    background-color: $version-3__theme-green;
+  }
+  .stage-1__bg .small-ball:nth-child(1),
+  .stage-1__bg .small-ball:nth-child(3) { top: -50vmin; }
+  .stage-1__bg .small-ball:nth-child(2),
+  .stage-1__bg .small-ball:nth-child(4) { bottom: -50vmin; }
+  .stage-1__bg .big-ball {
+    position: absolute;
+    top: calc(50% - 50vmax); left: calc(50% - 50vmax);
+    width: 100vmax; height: 100vmax;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: scale(0);
+
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0%; height: 0%;
+      border-radius: 50%;
+      background-image: url(../images/version_3/bg-dot.svg);
+      background-size: 100px;
+      background-attachment: fixed;
+      border: solid 0px #eee;
+      box-sizing: border-box;
+    }
+  }
+
+  .stage-1__frame { /*** frame ***/
+    position: absolute;
+    @include pc-layout {
+      top: 20px; left: 20px;
+      width: calc(100% - 40px); height: calc(100% - 40px);
+    }
+    @include sp-layout {
+      top: 5px; left: 5px;
+      width: calc(100% - 10px); height: calc(100% - 10px);
+    }
+    overflow: hidden;
+
+    div {
+      position: absolute;
+      box-sizing: border-box;
+    }
+    div:nth-child(1),
+    div:nth-child(2) {
+      left: 0; width: 100%; height: 5px;
+      border-top: dashed 5px $version-3__theme-black;
+    }
+    div:nth-child(3),
+    div:nth-child(4) {
+      top: 0; width: 5px; height: 100%;
+      border-left: dashed 5px $version-3__theme-black;
+    }
+    div:nth-child(1) { top: 0; transform: translateX(100%); }
+    div:nth-child(2) { bottom: 0; transform: translateX(-100%); }
+    div:nth-child(3) { left: 0; transform: translateY(-100%); }
+    div:nth-child(4) { right: 0; transform: translateY(100%); }
+  }
+
+  .stage-1__ball { /*** ball ***/
+    opacity: 0;
+
+    div { position: absolute; bottom: 50%; border-radius: 50%; }
+    div:nth-child(1) {
+      left: calc(50% - 20px);
+      width: 40px; height: 40px;
+      background-color: $version-3__theme-green;
+    }
+    div:nth-child(2) {
+      left: calc(50% - 10px);
+      width: 20px; height: 20px;
+      background-color: $version-3__theme-pink;
+    }
+    div:nth-child(3) {
+      left: calc(50% - 15px);
+      width: 30px; height: 30px;
+      background-color: $version-3__theme-black;
+    }
+  }
+
+  .stage-1__box { /*** box ***/
+    position: absolute;
+    @include pc-layout {
+      top: calc(50% - 75px); left: calc(50% - 75px);
+      width: 150px; height: 150px;
+    }
+    @include sp-layout {
+      top: calc(50% - 15vmin); left: calc(50% - 15vmin);
+      width: 30vmin; height: 30vmin;
+    }
+  }
+  .stage-1__box::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 5px;
+    transform-origin: left top;
+    transform: rotate(-140deg);
+    background-color: $version-3__theme-red;
+    opacity: 0;
+  }
+  .stage-1__box-effects {
+    position: absolute;
+    top: -100%; left: -100%;
+    width: 300%; height: 300%;
+  }
+  .stage-1__box-effects div {
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px $version-3__theme-red;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  .stage-1__box-effects div:nth-child(1) {
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  .stage-1__box-effects div:nth-child(2) {
+    right: -15%; top: -15%;
+    width: 50%; height: 50%;
+  }
+  .stage-1__box-effects div:nth-child(3) {
+    left: -15%; bottom: -15%;
+    width: 50%; height: 50%;
+  }
+  .stage-1__box-frame {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+  }
+  .stage-1__box-frame div {
+    position: absolute;
+    background-color: $version-3__theme-red;
+  }
+  .stage-1__box-frame div:nth-child(1),
+  .stage-1__box-frame div:nth-child(2) {
+    left: 0; width: 100%; height: 2px;
+  }
+  .stage-1__box-frame div:nth-child(3),
+  .stage-1__box-frame div:nth-child(4) {
+    top: 0; width: 2px; height: 100%;
+  }
+  .stage-1__box-frame div:nth-child(1) { top: 0; transform: translateX(100%); }
+  .stage-1__box-frame div:nth-child(2) { bottom: 0; transform: translateX(-100%); }
+  .stage-1__box-frame div:nth-child(3) { left: 0; transform: translateY(-100%); }
+  .stage-1__box-frame div:nth-child(4) { right: 0; transform: translateY(100%); }
+  .stage-1__box-frame::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: $version-3__theme-red;
+    transform: translateY(100%);
+  }
+
+  .stage-1__end { /*** end ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      top: calc(-100% + -25vw); left: 0;
+      width: 100%; height: 100%;
+      background-color: $version-3__theme-mint;
+
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+        bottom: -25vw; left: 0;
+        width: 0; height: 0;
+        border-top: solid 25vw $version-3__theme-mint;
+        border-left: solid 50vw transparent;
+        border-right: solid 50vw transparent;
+      }
+    }
+    div:nth-child(2) {
+      background-color: $version-3__theme-dark-mint;
+      &::after { border-top-color: $version-3__theme-dark-mint; }
+    }
+    div:nth-child(3) {
+      background-color: #fff;
+      &::after { border-top-color: #fff; }
+    }
+  }
+}
+
+
+/*****************************************************************************
+ * animation
+ *****************************************************************************/
+.version-3 {
+  .stage-1__bg .small-ball { animation: scale0-1 1.2s cubic-bezier(0.13, 0.42, 0, 1.01) 2s forwards; }
+  .stage-1__bg .big-ball { animation: scale0-1 1.2s cubic-bezier(0.13, 0.42, 0, 1.01) 2.15s forwards; }
+  .stage-1__bg .big-ball::after {
+    animation:
+      version-3__scale-bg 0.7s cubic-bezier(0, 0.63, 1, 0.4) 3.9s forwards,
+      version-3__scale-bg 1s cubic-bezier(0.82, 0, 0.99, 0.49) 5.7s reverse forwards;
+  }
+
+  .stage-1__frame div:nth-child(1) { animation: slide-left 0.3s cubic-bezier(0.23, 0.68, 0.22, 1.01) 2.8s forwards; }
+  .stage-1__frame div:nth-child(3) { animation: slide-bottom 0.3s cubic-bezier(0.23, 0.68, 0.22, 1.01) 3.1s forwards; }
+  .stage-1__frame div:nth-child(2) { animation: slide-right 0.3s cubic-bezier(0.23, 0.68, 0.22, 1.01) 3.4s forwards; }
+  .stage-1__frame div:nth-child(4) { animation: slide-top 0.3s cubic-bezier(0.23, 0.68, 0.22, 1.01) 3.7s forwards; }
+
+  .stage-1__ball {
+    animation: fadein 0.05s ease 4.6s forwards;
+    div:nth-child(1) {
+      animation:
+        version-3__up-ball 0.4s cubic-bezier(0.12, 0.48, 0.03, 1) 4.6s forwards,
+        version-3__down-ball 0.4s cubic-bezier(0.82, 0, 0.99, 0.49) 5.4s forwards;
+    }
+    div:nth-child(2) {
+        animation:
+          version-3__up-ball 0.4s cubic-bezier(0.12, 0.48, 0.03, 1) 4.7s forwards,
+          version-3__down-ball 0.4s cubic-bezier(0.82, 0, 0.99, 0.49) 5.55s forwards;
+    }
+    div:nth-child(3) {
+        animation:
+          version-3__up-ball 0.4s cubic-bezier(0.12, 0.48, 0.03, 1) 4.8s forwards,
+          version-3__down-ball 0.4s cubic-bezier(0.82, 0, 0.99, 0.49) 5.65s forwards;
+    }
+  }
+
+  .stage-1__box-frame div:nth-child(1) { animation: slide-left 0.6s cubic-bezier(0.1, 0.34, 0, 1) 3.3s forwards; }
+  .stage-1__box-frame div:nth-child(2) { animation: slide-right 0.6s cubic-bezier(0.1, 0.34, 0, 1) 3.3s forwards; }
+  .stage-1__box-frame div:nth-child(3) { animation: slide-bottom 0.6s cubic-bezier(0.1, 0.34, 0, 1) 3.3s forwards; }
+  .stage-1__box-frame div:nth-child(4) { animation: slide-top 0.6s cubic-bezier(0.1, 0.34, 0, 1) 3.3s forwards; }
+  .stage-1__box-frame::after { animation: slide-top 0.7s cubic-bezier(0, 0.63, 1, 0.4) 3.9s forwards; }
+  .stage-1__box-effects div:nth-child(1) {
+      animation:
+        fadein 0.4s ease 4.6s forwards,
+        fadeout 0.4s ease 4.9s forwards,
+        version-3__box-effect 0.8s cubic-bezier(0.13, 0.39, 0.25, 1) 4.6s forwards;
+  }
+  .stage-1__box-effects div:nth-child(2) {
+      animation:
+        fadein 0.4s ease 4.65s forwards,
+        fadeout 0.4s ease 4.95s forwards,
+        version-3__box-effect 0.8s cubic-bezier(0.13, 0.39, 0.25, 1) 4.65s forwards;
+  }
+  .stage-1__box-effects div:nth-child(3) {
+      animation:
+        fadein 0.4s ease 4.7s forwards,
+        fadeout 0.4s ease 5.0s forwards,
+        version-3__box-effect 0.8s cubic-bezier(0.13, 0.39, 0.25, 1) 4.7s forwards;
+  }
+  .stage-1__box::after {
+    animation:
+      fadein 0.05s ease 4.6s forwards,
+      version-3__open-box 0.7s cubic-bezier(0.08, 0.88, 0.09, 1.01) 4.6s forwards,
+      version-3__close-box 0.7s cubic-bezier(0.64, 0, 0.96, 0.6) 5.5s forwards;
+  }
+
+  .stage-1__end {
+    div:nth-child(1) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.2s forwards; }
+    div:nth-child(2) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.5s forwards; }
+    div:nth-child(3) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.8s forwards; }
+  }
+}
