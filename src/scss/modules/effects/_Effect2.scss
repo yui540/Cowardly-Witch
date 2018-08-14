@@ -1,0 +1,34 @@
+.effect-2 {
+  position: absolute;
+
+  .line {
+    position: absolute;
+    top: 0; left: calc(50% - 2px);
+    width: 4px; height: 100%;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 20%;
+      overflow: hidden;
+      
+      span {
+        content: ""; display: block;
+        width: 100%; height: 100%;
+        transform: translateY(100%);
+      }
+    }
+  }
+  .line:nth-child(2) { transform: rotate(45deg); }
+  .line:nth-child(3) { transform: rotate(90deg); }
+  .line:nth-child(4) { transform: rotate(135deg); }
+  .line:nth-child(5) { transform: rotate(180deg); }
+  .line:nth-child(6) { transform: rotate(225deg); }
+  .line:nth-child(7) { transform: rotate(270deg); }
+  .line:nth-child(8) { transform: rotate(315deg); }
+}
+
+@keyframes effect-2__slide {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(-100%); }
+}
