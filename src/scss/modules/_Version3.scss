@@ -1,10 +1,12 @@
 $version-3__theme-black: #4A3F55;
 $version-3__theme-green: #C3CE5F;
 $version-3__theme-pink: #C45C66;
+$version-3__theme-orage: #e58840;
 $version-3__theme-red: rgb(168, 30, 91);
 $version-3__theme-blue: #8DF8FB;
 $version-3__theme-mint: #4AA9A4;
 $version-3__theme-dark-mint: #444D5A;
+$version-3__theme-cream: rgb(250, 247, 217);
 
 .version-3 {
   position: absolute;
@@ -223,9 +225,254 @@ $version-3__theme-dark-mint: #444D5A;
       &::after { border-top-color: $version-3__theme-dark-mint; }
     }
     div:nth-child(3) {
-      background-color: #fff;
-      &::after { border-top-color: #fff; }
+      background-color: $version-3__theme-cream;
+      &::after { border-top-color: $version-3__theme-cream; }
     }
+  }
+
+  /**
+   * stage-2
+   */
+  .stage-2 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .stage-2__frame { /*** frame ***/
+    position: absolute;
+    top: 20px; left: 20px;
+    width: calc(100% - 40px); height: calc(100% - 40px);
+    
+    div {
+      position: absolute;
+      width: 50px; height: 50px;
+      transform: scale(0);
+    }
+    div:nth-child(1),
+    div:nth-child(4) { background-color: $version-3__theme-dark-mint; }
+    div:nth-child(2),
+    div:nth-child(3) { background-color: $version-3__theme-mint; }
+    div:nth-child(1) { top: 0; left: 0; }
+    div:nth-child(2) { top: 0; right: 0; }
+    div:nth-child(3) { bottom: 0; left: 0; }
+    div:nth-child(4) { bottom: 0; right: 0; }
+  }
+
+  .stage-2__effect-1 { /*** effect-1 ***/
+    position: absolute;
+    top: calc(50% - 40vmin); left: calc(50% - 40vmin);
+    width: 80vmin; height: 80vmin;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      transform: scale(0);
+    }
+    &::before { background-color: $version-3__theme-mint; }
+    &::after  { background-color: $version-3__theme-cream; }
+  }
+
+  .stage-2__effect-2 { /*** effect-2 ***/
+    position: absolute;
+    top: calc(50% - 35vmin); left: calc(50% - 35vmin);
+    width: 70vmin; height: 70vmin;
+    opacity: 0;
+
+    div {
+      position: absolute;
+      top: 0; left: calc(50% - 1px);
+      width: 2px; height: 50%;
+      overflow: hidden;
+      transform-origin: center bottom;
+
+      &::after {
+        content: ""; display: block;
+        width: 100%; height: 100%;
+        background-color: $version-3__theme-mint;
+        transform: translateY(100%);
+      }
+    }
+    div:nth-child(2) { transform: rotate(45deg); }
+    div:nth-child(3) { transform: rotate(90deg); }
+    div:nth-child(4) { transform: rotate(135deg); }
+    div:nth-child(5) { transform: rotate(180deg); }
+    div:nth-child(6) { transform: rotate(225deg); }
+    div:nth-child(7) { transform: rotate(270deg); }
+    div:nth-child(8) { transform: rotate(315deg); }
+  }
+
+  .stage-2__bg-ball { /*** bg-ball ***/
+    position: absolute;
+    top: calc(50% - 50vmax); left: calc(50% - 50vmax);
+    width: 100vmax; height: 100vmax;
+    background-color: $version-3__theme-orage;
+    border-radius: 50%;
+    transform: scale(0);
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+    &::before {
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: $version-3__theme-dark-mint;
+    }
+    &::after {
+      top: 20px; left: 20px;
+      width: calc(100% - 40px); height: calc(100% - 40px);
+      border: solid 30px $version-3__theme-cream;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+  }
+
+  .stage-2__ball { /*** ball ***/
+    position: absolute;
+    top: calc(50% - 25px); left: calc(50% - 25px);
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background-color: $version-3__theme-dark-mint;
+    transform: translateY(calc(50vh + 25px));
+  }
+
+  .stage-2__line-effects { /*** line-effects ***/
+    position: absolute;
+    top: calc(50% - 30vmin); left: calc(50% - 30vmin);
+    width: 60vmin; height: 60vmin;
+
+    .eff-0 { width: 200px; height: 200px; top: calc(50% - 100px); left: calc(50% - 100px); }
+    .eff-1, .eff-2, .eff-3, .eff-4 { width: 150px; height: 150px; }
+    .eff-1 { top: -75px; right: -75px; }
+    .eff-2 { bottom: -75px; left: -75px; }
+    .eff-3 { top: -75px; left: -75px; }
+    .eff-4 { bottom: -75px; right: -75px; }
+  }
+
+  .stage-2__line { /*** line ***/
+    position: absolute;
+    left: 0; top: calc(50% - 30vmin);
+    width: 100%; height: 60vmin;
+
+    &::before,
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      width: calc(60vmin + ((100% - 60vmin) / 2)); height: 2px;
+      background-color: $version-3__theme-cream;
+    }
+    &::before { top: 0; right: calc((100% - 60vmin) / 2); transform: translateX(-100%); }
+    &::after  { bottom: 0; left: calc((100% - 60vmin) / 2); transform: translateX(100%); }
+  }
+
+  .stage-2__box { /*** box ***/
+    position: absolute;
+    top: calc(50% - 30vmin); left: calc(50% - 30vmin);
+    width: 60vmin; height: 60vmin;
+    overflow: hidden;
+
+    .bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+
+      div {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        transform-origin: right top;
+        transform: rotate(-90deg);
+      }
+      div:nth-child(1) { background-color: $version-3__theme-pink; }
+      div:nth-child(2) { background-color: $version-3__theme-cream; }
+
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url(../images/version_3/mazitenshi.svg);
+        background-size: 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+      }
+    }
+    
+    .char {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+
+      div {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        transform-origin: right top;
+        transform: rotate(-90deg);
+        background-size: auto 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      div:nth-child(2) { background-color: $version-3__theme-cream; }
+    }
+    .char-1 {
+      div:nth-child(1) { background-color: $version-3__theme-red; }
+      div:nth-child(3) { background-image: url(../images/version_3/char-1.svg); }
+    }
+    .char-2 {
+      div:nth-child(1) { background-color: $version-3__theme-orage; }
+      div:nth-child(3) { background-image: url(../images/version_3/char-2.svg); }
+    }
+    .char-3 {
+      div:nth-child(1) { background-color: $version-3__theme-green; }
+      div:nth-child(3) { background-image: url(../images/version_3/char-3.svg); }
+    }
+  }
+
+  .stage-2__box-effects { /*** box-effects ***/
+    position: absolute;
+    top: calc(50% - 30vmin); left: calc(50% - 30vmin);
+    width: 60vmin; height: 60vmin;
+
+    .eff-0,
+    .eff-2 {
+      top: -100px; left: -100px;
+      width: 200px; height: 200px;
+    }
+    .eff-1,
+    .eff-3 {
+      bottom: -100px; right: -100px;
+      width: 200px; height: 200px;
+    }
+  }
+
+  /**
+   * end
+   */
+  .version-3__end {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform-origin: right top;
+      transform: rotate(90deg);
+    }
+    div:nth-child(1) { background-color: $version-3__theme-mint; }
+    div:nth-child(2) { background-color: $version-3__theme-cream; }
+    div:nth-child(3) { background-color: #43445B; }
   }
 }
 
@@ -300,5 +547,91 @@ $version-3__theme-dark-mint: #444D5A;
     div:nth-child(1) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.2s forwards; }
     div:nth-child(2) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.5s forwards; }
     div:nth-child(3) { animation: version-3__stage-1-end 0.5s cubic-bezier(0, 0.63, 1, 0.4) 6.8s forwards; }
+  }
+
+  .stage-2__frame {
+    div:nth-child(1) { animation: version-3__show-stage-2-frame 0.6s cubic-bezier(0.2, 0.85, 0.07, 0.97) 7.9s forwards; }
+    div:nth-child(2) { animation: version-3__show-stage-2-frame 0.6s cubic-bezier(0.2, 0.85, 0.07, 0.97) 8.1s forwards; }
+    div:nth-child(3) { animation: version-3__show-stage-2-frame 0.6s cubic-bezier(0.2, 0.85, 0.07, 0.97) 8.2s forwards; }
+    div:nth-child(4) { animation: version-3__show-stage-2-frame 0.6s cubic-bezier(0.2, 0.85, 0.07, 0.97) 8.0s forwards; }
+  }
+  .stage-2__effect-1 {
+    &::before { animation: scale0-1 0.5s cubic-bezier(0.2, 0.85, 0.07, 0.97) 7.9s forwards; }
+    &::after  { animation: scale0-1 0.5s cubic-bezier(0.2, 0.85, 0.07, 0.97) 8.0s forwards; }
+  }
+  .stage-2__effect-2 {
+    animation: fadein 0.05s ease 8.4s forwards;
+    div::after {
+      animation:
+        slide-top 0.2s ease-out 8.45s forwards, 
+        slide-bottom 0.2s ease-in 8.75s reverse forwards;
+    }
+  }
+  .stage-2__bg-ball {
+    animation: scale0-1 0.8s cubic-bezier(0.36, 0.95, 0.22, 1.03) 8.9s forwards;
+    &::before { animation: scale0-1 0.6s cubic-bezier(0.36, 0.95, 0.22, 1.03) 9.7s reverse forwards; }
+    &::after  { animation: turn1 3s linear 8.9s infinite; }
+  }
+  .stage-2__ball {
+    animation:
+      version-3__fly-ball 0.5s cubic-bezier(0.2, 0.85, 0.07, 0.97) 7.25s forwards,
+      version-3__blast-ball 0.7s cubic-bezier(0.2, 0.85, 0.07, 0.97) 7.75s forwards;
+  }
+  .stage-2__line-effects {
+    .eff-0 {
+      div:nth-child(1) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.3s forwards; }
+      div:nth-child(2) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.4s forwards; }
+    }
+    .eff-1,
+    .eff-2 {
+      div:nth-child(1) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.6s forwards; }
+      div:nth-child(2) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.7s forwards; }
+    }
+    .eff-3,
+    .eff-4 {
+      div:nth-child(1) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 11s forwards; }
+      div:nth-child(2) { animation: effect-1__scale 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 11.1s forwards; }
+    }
+  }
+  .stage-2__line {
+    &::before { animation: version-3__slide-line-1 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.4s forwards; }
+    &::after  { animation: version-3__slide-line-2 0.6s cubic-bezier(0.3, 0.88, 0.12, 1.01) 10.4s forwards; }
+  }
+  .stage-2__box {
+    .bg {
+      div:nth-child(1) { animation: version-3__rotate-bg 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 11s forwards; }
+      div:nth-child(2) { animation: version-3__rotate-bg 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 11.1s forwards; }
+      &::after {
+        animation:
+          verison-3__show-mazitenshi 0.6s cubic-bezier(0.91, 0.03, 0.09, 1.01) 11.5s forwards,
+          verison-3__hidden-mazitenshi 0.6s cubic-bezier(0.91, 0.03, 0.09, 1.01) 12.1s forwards;
+      }
+    }
+    .char-1 {
+      div:nth-child(1) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 12.3s forwards; }
+      div:nth-child(2) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 12.4s forwards; }
+      div:nth-child(3) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 12.5s forwards; }
+    }
+    .char-2 {
+      div:nth-child(1) { animation: version-3__rotate-bg 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 12.9s forwards; }
+      div:nth-child(2) { animation: version-3__rotate-bg 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 13.0s forwards; }
+      div:nth-child(3) { animation: version-3__rotate-bg 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 13.1s forwards; }
+    }
+    .char-3 {
+      div:nth-child(1) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 13.5s forwards; }
+      div:nth-child(2) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 13.6s forwards; }
+      div:nth-child(3) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 13.7s forwards; }
+    }
+  }
+  .stage-2__box-effects {
+    .eff-0 span { animation: effect-2__slide 0.4s ease 11.6s forwards; }
+    .eff-1 span { animation: effect-2__slide 0.4s ease 12.9s forwards; }
+    .eff-2 span { animation: effect-2__slide 0.4s ease 13.5s forwards; }
+    .eff-3 span { animation: effect-2__slide 0.4s ease 14.1s forwards; }
+  }
+  .version-3__end {
+    div:nth-child(1) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 14.1s forwards; }
+    div:nth-child(2) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 14.2s forwards; }
+    div:nth-child(3) { animation: version-3__rotate-char 0.6s cubic-bezier(0.76, 0.02, 0.15, 1) 14.3s forwards; }
   }
 }
