@@ -3,7 +3,7 @@ import VersionView from './VersionView'
 import Effect1 from './effects/Effect1'
 import Effect2 from './effects/Effect2'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="version-3">
     <VersionView version="3" />
     <div className="stage-1">
@@ -73,7 +73,7 @@ export default () => (
       </div>
     </div>
     <div className="version-3__end">
-      <div></div><div></div><div></div>
+      <div></div><div></div><div onAnimationEnd={changeChapter}></div>
     </div>
   </div>
 )
