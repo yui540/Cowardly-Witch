@@ -1,5 +1,7 @@
 import React from 'react'
 import VersionView from './VersionView'
+import Effect1 from './effects/Effect1'
+import Effect2 from './effects/Effect2'
 
 export default () => (
   <div className="version-3">
@@ -29,6 +31,49 @@ export default () => (
       <div className="stage-1__end">
         <div></div><div></div><div></div>
       </div>
+    </div>
+    <div className="stage-2">
+      <div className="stage-2__frame">
+        <div></div><div></div><div></div><div></div>
+      </div>
+      <div className="stage-2__effect-1"></div>
+      <div className="stage-2__effect-2">
+        <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
+      </div>
+      <div className="stage-2__bg-ball"></div>
+      <div className="stage-2__ball"></div>
+      <div className="stage-2__line-effects">
+        <Effect1 color1="rgb(250, 247, 217)" color2="#e58840" classname="eff-0" />
+        <Effect1 color1="rgb(250, 247, 217)" color2="#e58840" classname="eff-1" />
+        <Effect1 color1="rgb(250, 247, 217)" color2="#e58840" classname="eff-2" />
+        <Effect1 color1="rgb(250, 247, 217)" color2="#e58840" classname="eff-3" />
+        <Effect1 color1="rgb(250, 247, 217)" color2="#e58840" classname="eff-4" />
+      </div>
+      <div className="stage-2__line"></div>
+      <div className="stage-2__box">
+        <div className="bg">
+          <div></div><div></div>
+        </div>
+        <div className="char char-1">
+          <div></div><div></div><div></div>
+        </div>
+        <div className="char char-2">
+          <div></div><div></div><div></div>
+        </div>
+        <div className="char char-3">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+      <div className="stage-2__box-effects">
+        <Effect2 color="#fff" classname="eff-0" />
+        <Effect2 color="#fff" classname="eff-1" />
+        <Effect2 color="#fff" classname="eff-2" />
+        <Effect2 color="#fff" classname="eff-3" />
+      </div>
+    </div>
+    <div className="version-3__end">
+      <div></div><div></div><div></div>
     </div>
   </div>
 )
