@@ -56,5 +56,43 @@ export default () => (
         <div></div><div></div><div></div><div></div>
       </div>
     </div>
+    <div className="stage-2">
+      <div className="stage-2__bg"></div>
+      <div className="stage-2__bar">
+        <div className="bar">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <div className="bar">
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+      <div className="stage-2__frame">
+        <div className="rect">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <div className="rect">
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+      <div className="stage-2__shutter"></div>
+      <div className="stage-2__box">
+        <div className="bg"></div>
+        <div className="frame">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <div className="words">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div className="stage-2__message">
+        <div className="bg">
+          <div></div><div></div><div></div>
+        </div>
+        <div className="text"></div>
+      </div>
+    </div>
+    <div className="version-4__end"></div>
   </div>
 )
