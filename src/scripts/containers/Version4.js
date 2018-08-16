@@ -7,7 +7,7 @@ const mapStateToProps = () => ({})
 
 const mapDispatchToProps = dispatch => ({
   changeChapter() {
-    const chapter = 'Version_4'
+    const chapter = 'Version_5'
     const description = config[chapter]
     dispatch(changeChapter(
       chapter,

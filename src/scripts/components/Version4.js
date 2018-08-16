@@ -4,7 +4,7 @@ import Effect1 from './effects/Effect1'
 import Effect2 from './effects/Effect2'
 import Effect3 from './effects/Effect3'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="version-4">
     <VersionView version="4" />
     <div className="stage-1">
@@ -93,6 +93,9 @@ export default () => (
         <div className="text"></div>
       </div>
     </div>
-    <div className="version-4__end"></div>
+    <div className="version-4__end">
+      <div></div>
+      <div onAnimationEnd={changeChapter}></div>
+    </div>
   </div>
 )
