@@ -1,0 +1,54 @@
+@keyframes version-4__rotate-bg-1 {
+  from { transform: rotate(90deg); }
+  to   { transform: rotate(0deg); }
+}
+@keyframes version-4__rotate-bg-2 {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes version-4__move-block-1 {
+  from { transform: translate(-100%, -100%); }
+  to   { transform: translate(0%, 0%); }
+}
+@keyframes version-4__move-block-2 {
+  from { transform: translate(100%, -100%); }
+  to   { transform: translate(0%, 0%); }
+}
+@keyframes version-4__move-block-3 {
+  from { transform: translate(-100%, 100%); }
+  to   { transform: translate(0%, 0%); }
+}
+@keyframes version-4__move-block-4 {
+  from { transform: translate(100%, 100%); }
+  to   { transform: translate(0%, 0%); }
+}
+
+@keyframes version-4__move-char-1 {
+  from { transform: translateX(0vmin); }
+  to   { transform: translateX(-50vmin); }
+}
+@keyframes version-4__move-char-2 {
+  from { transform: translateX(-50vmin); }
+  to   { transform: translateX(-100vmin); }
+}
+
+@keyframes version-4__show-star {
+  from { transform: translateX(calc(50vw + 4vmin)); }
+  to   { transform: translateX(0); }
+}
+@keyframes version-4__hidden-star {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50vw + -4vmin)); }
+}
+
+@keyframes version-4__stage-1-end {
+  from { transform: translateX(calc(100vw + 12.5vh)); }
+  to   { transform: translateX(0); }
+}
+
+
+@keyframes version-4__turn-bar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}

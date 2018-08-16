@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import { changeChapter } from '../actions/opening'
-import Version3 from '../components/Version3'
+import Version4 from '../components/Version4'
 import config from '../config/opening.json'
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = dispatch => ({
   changeChapter() {
-    const chapter = 'Version_4'
+    const chapter = 'Version_5'
     const description = config[chapter]
     dispatch(changeChapter(
       chapter,
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Version3)
+)(Version4)
