@@ -46,3 +46,9 @@
   from { transform: translateX(calc(100vw + 12.5vh)); }
   to   { transform: translateX(0); }
 }
+
+
+@keyframes version-4__turn-bar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}
