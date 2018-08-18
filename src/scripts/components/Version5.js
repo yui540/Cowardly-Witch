@@ -2,7 +2,7 @@ import React from 'react'
 import VersionView from './VersionView'
 import Effect1 from './effects/Effect1'
 
-export default () => (
+export default ({ changeChapter }) => (
   <div className="version-5">
     <VersionView version="5" />
     <div className="stage-1">
@@ -56,7 +56,10 @@ export default () => (
       </div>
     </div>
     <div className="stage-2__panel">
-      <div></div><div></div><div></div><div></div>
+      <div><span></span><span></span></div>
+      <div><span></span><span></span></div>
+      <div><span></span><span></span></div>
+      <div><span></span><span onAnimationEnd={changeChapter}></span></div>
     </div>
   </div>
 )

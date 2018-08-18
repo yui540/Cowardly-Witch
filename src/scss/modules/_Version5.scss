@@ -283,16 +283,15 @@ $version-5__theme-purple: #B980AE;
       position: relative;
       width: 50%; height: 50%;
 
-      &::before,
-      &::after {
-        content: ""; display: block;
+      span {
+        display: block;
         position: absolute;
         top: 0; left: 0;
         width: 100%; height: 100%;
         opacity: 0;
       }
-      &::before { background-color: $version-5__theme-red; }
-      &::after  { background-color: #43445B; }
+      span:nth-child(1) { background-color: $version-5__theme-red; }
+      span:nth-child(2) { background-color: #43445B; }
     }
     &::after { content: ""; display: block; clear: both; }
   }
@@ -467,13 +466,13 @@ $version-5__theme-purple: #B980AE;
     }
   }
   .stage-2__panel {
-    div:nth-child(1)::before { animation: fadein 0.05s linear 13.7s 3 alternate forwards; }
-    div:nth-child(2)::before { animation: fadein 0.05s linear 13.8s 3 alternate forwards; }
-    div:nth-child(3)::before { animation: fadein 0.05s linear 13.9s 3 alternate forwards; }
-    div:nth-child(4)::before { animation: fadein 0.05s linear 14.0s 3 alternate forwards; }
-    div:nth-child(1)::after  { animation: fadein 0.05s linear 14.1s 3 alternate forwards; }
-    div:nth-child(2)::after  { animation: fadein 0.05s linear 14.2s 3 alternate forwards; }
-    div:nth-child(3)::after  { animation: fadein 0.05s linear 14.3s 3 alternate forwards; }
-    div:nth-child(4)::after  { animation: fadein 0.05s linear 14.4s 3 alternate forwards; }
+    div:nth-child(1) span:nth-child(1) { animation: fadein 0.05s linear 13.7s 3 alternate forwards; }
+    div:nth-child(2) span:nth-child(1) { animation: fadein 0.05s linear 13.8s 3 alternate forwards; }
+    div:nth-child(3) span:nth-child(1) { animation: fadein 0.05s linear 13.9s 3 alternate forwards; }
+    div:nth-child(4) span:nth-child(1) { animation: fadein 0.05s linear 14.0s 3 alternate forwards; }
+    div:nth-child(1) span:nth-child(2) { animation: fadein 0.05s linear 14.1s 3 alternate forwards; }
+    div:nth-child(2) span:nth-child(2) { animation: fadein 0.05s linear 14.2s 3 alternate forwards; }
+    div:nth-child(3) span:nth-child(2) { animation: fadein 0.05s linear 14.3s 3 alternate forwards; }
+    div:nth-child(4) span:nth-child(2) { animation: fadein 0.05s linear 14.4s 3 alternate forwards; }
   }
 }
