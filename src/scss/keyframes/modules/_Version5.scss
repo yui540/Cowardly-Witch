@@ -46,3 +46,22 @@
   from { background-color: $version-5__theme-blue; }
   to   { background-color: $version-5__theme-purple; }
 }
+
+@keyframes version-5__move-1 {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(0vw); }
+}
+@keyframes version-5__move-2 {
+  from { transform: translateX(0vw); }
+  to   { transform: translateX(-100vw); }
+}
+@keyframes version-5__move-3 {
+  from { transform: translateX(-100vw); }
+  to   { transform: translateX(-200vw); }
+}
+
+@keyframes version-5__jump-eriri {
+  0%   { transform: translateY(100%); }
+  50%  { transform: translateY(-10%); }
+  100% { transform: translateY(0%); }
+}

@@ -145,7 +145,6 @@ $version-5__theme-purple: #B980AE;
     }
     .section:nth-child(5) {
       display: flex;
-      transform: translateY(-50%);
       div {
         width: 20%; height: 100%;
         &::after {
@@ -214,7 +213,88 @@ $version-5__theme-purple: #B980AE;
     div:nth-child(1) { background-color: $version-5__theme-yellow; }
     div:nth-child(2) { background-color: $version-5__theme-red; }
     div:nth-child(3) { background-color: $version-5__theme-blue; }
-    div:nth-child(4) { background-color: $version-5__theme-green; }
+    div:nth-child(4) { background-color: #fff; }
+  }
+
+  /**
+   * stage-2
+   */
+  .stage-2 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .stage-2__box { /*** box ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 300vw; height: 100%;
+    display: flex;
+    transform: translateX(100vw);
+
+    .area {
+      position: relative;
+      width: 100vw; height: 100%;
+      
+      .effect-1 {
+        top: calc(50% - 50vmin); left: calc(50% - 50vmin);
+        width: 100vmin; height: 100vmin;
+      }
+
+      .eriri {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translateY(100%);
+      }
+    }
+    .area-1 {
+      background-color: $version-5__theme-green;
+      .eriri {
+        background-image: url(../images/version_5/eriri-1.svg);
+        background-size: auto 80%;
+      }
+    }
+    .area-2 {
+      background-color: $version-5__theme-yellow;
+      .eriri {
+        background-image: url(../images/version_5/eriri-2.svg);
+        background-size: auto 90%;
+      }
+    }
+    .area-3 {
+      background-color: $version-5__theme-blue;
+      .eriri {
+        background-image: url(../images/version_5/eriri-3.svg);
+        background-size: auto 60%;
+      }
+    }
+  }
+
+  .stage-2__panel { /*** panel ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      float: left;
+      position: relative;
+      width: 50%; height: 50%;
+
+      &::before,
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        opacity: 0;
+      }
+      &::before { background-color: $version-5__theme-red; }
+      &::after  { background-color: #43445B; }
+    }
+    &::after { content: ""; display: block; clear: both; }
   }
 }
 
@@ -357,5 +437,43 @@ $version-5__theme-purple: #B980AE;
     div:nth-child(2) { animation: slide-bottom 0.6s cubic-bezier(0.21, 0.65, 0, 0.99) 10.8s forwards; }
     div:nth-child(3) { animation: slide-bottom 0.6s cubic-bezier(0.21, 0.65, 0, 0.99) 10.9s forwards; }
     div:nth-child(4) { animation: slide-bottom 0.6s cubic-bezier(0.21, 0.65, 0, 0.99) 11.0s forwards; }
+  }
+
+  .stage-2__box {
+    animation:
+      version-5__move-1 0.35s cubic-bezier(0.32, 0.7, 0.29, 0.99) 11.6s forwards,
+      version-5__move-2 0.35s cubic-bezier(0.32, 0.7, 0.29, 0.99) 12.3s forwards,
+      version-5__move-3 0.35s cubic-bezier(0.32, 0.7, 0.29, 0.99) 13.0s forwards;
+    .area-1 {
+      .effect-1 {
+        div:nth-child(1) { animation: effect-1__scale 0.5s ease 11.7s forwards; }
+        div:nth-child(2) { animation: effect-1__scale 0.5s ease 11.75s forwards; }
+      }
+      .eriri { animation: version-5__jump-eriri 0.6s cubic-bezier(0.32, 0.7, 0.29, 0.99) 11.7s forwards; }
+    }
+    .area-2 {
+      .effect-1 {
+        div:nth-child(1) { animation: effect-1__scale 0.5s ease 12.4s forwards; }
+        div:nth-child(2) { animation: effect-1__scale 0.5s ease 12.45s forwards; }
+      }
+      .eriri { animation: version-5__jump-eriri 0.6s cubic-bezier(0.32, 0.7, 0.29, 0.99) 12.4s forwards; }
+    }
+    .area-3 {
+      .effect-1 {
+        div:nth-child(1) { animation: effect-1__scale 0.5s ease 13.1s forwards; }
+        div:nth-child(2) { animation: effect-1__scale 0.5s ease 13.15s forwards; }
+      }
+      .eriri { animation: version-5__jump-eriri 0.6s cubic-bezier(0.32, 0.7, 0.29, 0.99) 13.1s forwards; }
+    }
+  }
+  .stage-2__panel {
+    div:nth-child(1)::before { animation: fadein 0.05s linear 13.7s 3 alternate forwards; }
+    div:nth-child(2)::before { animation: fadein 0.05s linear 13.8s 3 alternate forwards; }
+    div:nth-child(3)::before { animation: fadein 0.05s linear 13.9s 3 alternate forwards; }
+    div:nth-child(4)::before { animation: fadein 0.05s linear 14.0s 3 alternate forwards; }
+    div:nth-child(1)::after  { animation: fadein 0.05s linear 14.1s 3 alternate forwards; }
+    div:nth-child(2)::after  { animation: fadein 0.05s linear 14.2s 3 alternate forwards; }
+    div:nth-child(3)::after  { animation: fadein 0.05s linear 14.3s 3 alternate forwards; }
+    div:nth-child(4)::after  { animation: fadein 0.05s linear 14.4s 3 alternate forwards; }
   }
 }
