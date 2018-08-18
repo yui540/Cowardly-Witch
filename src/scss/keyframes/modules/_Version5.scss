@@ -1,0 +1,67 @@
+@keyframes version-5__fail-paint {
+  0%   { transform: translateY(-100vh); }
+  35%  { transform: translateY(0vh); }
+  70%  { transform: translateY(-3vh); }
+  100% { transform: translateY(0vh); }
+}
+
+@keyframes version-5__bound-1 {
+  0%   { transform: translateY(-100vh); }
+  35%  { transform: translateY(0vh); }
+  70%  { transform: translateY(-3vh); }
+  100% { transform: translateY(0vh); }
+}
+@keyframes version-5__bound-2 {
+  0%   { transform: translateY(100vh); }
+  35%  { transform: translateY(0vh); }
+  70%  { transform: translateY(3vh); }
+  100% { transform: translateY(0vh); }
+}
+@keyframes version-5__bound-3 {
+  0%   { transform: translateX(-100vw); }
+  35%  { transform: translateX(0vw); }
+  70%  { transform: translateX(-3vw); }
+  100% { transform: translateX(0vw); }
+}
+@keyframes version-5__bound-4 {
+  0%   { transform: translateX(100vw); }
+  35%  { transform: translateX(0vw); }
+  70%  { transform: translateX(3vw); }
+  100% { transform: translateX(0vw); }
+}
+
+@keyframes version-5__color-1 {
+  from { background-color: $version-5__theme-green; }
+  to   { background-color: $version-5__theme-yellow; }
+}
+@keyframes version-5__color-2 {
+  from { background-color: $version-5__theme-yellow; }
+  to   { background-color: $version-5__theme-red; }
+}
+@keyframes version-5__color-3 {
+  from { background-color: $version-5__theme-red; }
+  to   { background-color: $version-5__theme-blue; }
+}
+@keyframes version-5__color-4 {
+  from { background-color: $version-5__theme-blue; }
+  to   { background-color: $version-5__theme-purple; }
+}
+
+@keyframes version-5__move-1 {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(0vw); }
+}
+@keyframes version-5__move-2 {
+  from { transform: translateX(0vw); }
+  to   { transform: translateX(-100vw); }
+}
+@keyframes version-5__move-3 {
+  from { transform: translateX(-100vw); }
+  to   { transform: translateX(-200vw); }
+}
+
+@keyframes version-5__jump-eriri {
+  0%   { transform: translateY(100%); }
+  50%  { transform: translateY(-10%); }
+  100% { transform: translateY(0%); }
+}
