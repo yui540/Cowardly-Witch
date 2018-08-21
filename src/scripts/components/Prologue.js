@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default ({ changeChapter }) => (
+import skipImg from '../../images/prologue/skip.svg'
+
+export default ({ changeChapter, skipChapter }) => (
   <div className="prologue">
     <div className="prologue__bg" />
     <div className="prologue__frame" />
@@ -43,5 +45,8 @@ export default ({ changeChapter }) => (
       <div />
       <div onAnimationEnd={changeChapter} />
     </div>
+    <button className="skip-btn" type="button" onClick={skipChapter}>
+      <img className="skip" src={skipImg} alt="スキップボタン" />
+    </button>
   </div>
 )
