@@ -5,6 +5,7 @@ import Version2 from '../containers/Version2'
 import Version3 from '../containers/Version3'
 import Version4 from '../containers/Version4'
 import Version5 from '../containers/Version5'
+import Version6 from '../containers/Version6'
 
 export default ({ chapter, description }) => {
   if (chapter === 'Prologue') {
@@ -25,6 +26,8 @@ export default ({ chapter, description }) => {
       return <Version4 />
     case 'Version_5':
       return <Version5 />
+    case 'Version_6':
+      return <Version6 />
     default:
       return <h1>臆病な魔女</h1>
   }
