@@ -1,0 +1,46 @@
+@keyframes version-6__show-shutter {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(0deg); }
+}
+@keyframes version-6__hidden-shutter {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(90deg); }
+}
+
+@keyframes version-6__slide-char-1 {
+  from { opacity: 0; transform: translateX(-400px); }
+  to   { opacity: 0.3; transform: translateX(0px); }
+}
+@keyframes version-6__slide-char-2 {
+  from { opacity: 0; transform: translateY(-400px); }
+  to   { opacity: 0.3; transform: translateY(0px); }
+}
+@keyframes version-6__slide-char-3 {
+  from { opacity: 0; transform: translateX(400px); }
+  to   { opacity: 0.3; transform: translateX(0px); }
+}
+@keyframes version-6__slide-char-4 {
+  from { opacity: 0; transform: translateY(400px); }
+  to   { opacity: 0.3; transform: translateY(0px); }
+}
+@keyframes version-6__show-char {
+  from { transform: scale(3); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes version-6__down-shutter-1 {
+  from { transform: translateY(-100%) rotate(30deg); transform-origin: right bottom; }
+  to   { transform: translateY(0%) rotate(0deg); transform-origin: right bottom; }
+}
+@keyframes version-6__hidden-shutter-1 {
+  from { transform: translateY(0%) rotate(0deg); transform-origin: right top; }
+  to   { transform: translateY(100%) rotate(-30deg); transform-origin: right top; }
+}
+@keyframes version-6__down-shutter-2 {
+  from { transform: translateY(-100%) rotate(-30deg); transform-origin: left bottom; }
+  to   { transform: translateY(0%) rotate(0deg); transform-origin: left bottom; }
+}
+@keyframes version-6__hidden-shutter-2 {
+  from { transform: translateY(0%) rotate(0deg); transform-origin: left top; }
+  to   { transform: translateY(100%) rotate(30deg); transform-origin: left top; }
+}
