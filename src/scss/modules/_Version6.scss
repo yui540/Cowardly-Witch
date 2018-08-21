@@ -1,0 +1,385 @@
+$version-6__theme-bg: #FCFCF3;
+$version-6__theme-gray: #E4D6CE;
+$version-6__theme-pink: #C2617E;
+$version-6__theme-light-pink: #E5B8BD;
+$version-6__theme-purple: #4A3F55;
+$version-6__theme-light-purple: #817487;
+$version-6__theme-mint: #A8CBC6;
+
+.version-6 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+
+  /**
+   * stage-1
+   */
+  .stage-1 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .stage-1__shutter { /*** shutter ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform-origin: left bottom;
+      transform: rotate(-90deg)
+    }
+    div:nth-child(1) { background-color: $version-6__theme-pink; }
+    div:nth-child(2) { background-color: $version-6__theme-mint; }
+    div:nth-child(3) { background-color: $version-6__theme-purple; }
+  }
+
+  .stage-1__box { /*** box ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    .area {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+
+      .frame {
+        position: absolute;
+        top: 20px; left: 20px;
+        width: calc(100% - 40px); height: calc(100% - 40px);
+
+        div {
+          position: absolute;
+          overflow: hidden;
+
+          &::after {
+            content: ""; display: block;
+            width: 100%; height: 100%;
+            background-color: #fff;
+          }
+        }
+        div:nth-child(1),
+        div:nth-child(2) { left: 0; width: 100%; height: 2px; }
+        div:nth-child(3),
+        div:nth-child(4) { top: 0; width: 2px; height: 100%; }
+        div:nth-child(1) {
+          top: 0;
+          &::after { transform: translateX(100%); }
+        }
+        div:nth-child(2) {
+          bottom: 0;
+          &::after { transform: translateX(-100%); }
+        }
+        div:nth-child(3) {
+          left: 0;
+          &::after { transform: translateY(-100%); }
+        }
+        div:nth-child(4) {
+          right: 0;
+          &::after { transform: translateY(100%); }
+        }
+      }
+
+      .effect-2 {
+        top: calc(50% - 50vmin); left: calc(50% - 50vmin);
+        width: 100vmin; height: 100vmin;
+      }
+
+      .char {
+        position: absolute;
+        top: calc(50% - 50vmin); left: calc(50% - 50vmin);
+        width: 100vmin; height: 100vmin;
+
+        div {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background-size: auto 80%;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0;
+        }
+      }
+    }
+    .area-1 {
+      background-color: $version-6__theme-purple;
+      .char div { background-image: url(../images/version_6/char-1.svg); }
+    }
+    .area-2 {
+      background-color: $version-6__theme-pink;
+      .char div { background-image: url(../images/version_6/char-2.svg); }
+    }
+    .area-3 {
+      background-color: $version-6__theme-light-purple;
+      .char div { background-image: url(../images/version_6/char-3.svg); }
+    }
+    .area-4 {
+      background-color: $version-6__theme-mint;
+      .char div { background-image: url(../images/version_6/char-4.svg); }
+    }
+  }
+
+  .stage-1__shutter-2 { /*** shutter-2 ***/
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform: translateY(-100%);
+    }
+    div:nth-child(1) { background-color: $version-6__theme-mint; }
+    div:nth-child(2) { background-color: $version-6__theme-pink; }
+    div:nth-child(3) { background-color: $version-6__theme-purple; }
+  }
+
+  /**
+   * end
+   */
+  .version-6__end {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    div {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform: translateX(-100%);
+    }
+    div:nth-child(1) { background-color: $version-6__theme-purple; }
+    div:nth-child(2) { background-color: $version-6__theme-light-pink; }
+    div:nth-child(3) { background-color: $version-6__theme-mint; }
+    div:nth-child(4) { background-color: $version-6__theme-pink; }
+    div:nth-child(5) { background-color: $version-6__theme-light-purple; }
+    div:nth-child(6) { background-color: #fff; }
+  }
+}
+
+
+/*********************************************************************
+  animation
+**********************************************************************/
+.version-6 {
+  .stage-1__shutter {
+    div:nth-child(1) {
+      animation:
+        version-6__show-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 2s forwards,
+        version-6__hidden-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 3.1s forwards;
+    }
+    div:nth-child(2) {
+      animation:
+        version-6__show-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 2.15s forwards,
+        version-6__hidden-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 2.95s forwards;
+    }
+    div:nth-child(3) {
+      animation:
+        version-6__show-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 2.3s forwards,
+        version-6__hidden-shutter 0.5s cubic-bezier(0.99, 0.01, 0, 1.01) 2.8s forwards;
+    }
+  }
+  .stage-1__box {
+    .area-1 {
+      animation:
+        fadein 0s ease 2.8s forwards,
+        fadeout 0s ease 5.9s forwards;
+      .frame {
+        div:nth-child(4)::after {
+          animation:
+            slide-top 0.2s ease 3.6s forwards,
+            slide-bottom 0.2s ease 3.8s reverse forwards,
+            slide-top 0.2s ease 4.0s forwards,
+            slide-bottom 0.2s ease 4.2s reverse forwards;
+        } 
+        div:nth-child(3)::after {
+          animation:
+            slide-bottom 0.2s ease 3.6s forwards,
+            slide-top 0.2s ease 3.8s reverse forwards,
+            slide-bottom 0.2s ease 4.0s forwards,
+            slide-top 0.2s ease 4.2s reverse forwards;
+        } 
+        div:nth-child(1)::after {
+          animation:
+            slide-left 0.2s ease 3.8s forwards,
+            slide-right 0.2s ease 4.0s reverse forwards;
+        } 
+        div:nth-child(2)::after {
+          animation:
+            slide-right 0.2s ease 3.8s forwards,
+            slide-left 0.2s ease 4.0s reverse forwards;
+        } 
+      }
+      .effect-2 .line div span { animation: effect-2__slide 0.4s ease 4.5s forwards; }
+      .char {
+        div:nth-child(1) { animation: version-6__slide-char-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 3.6s forwards; }
+        div:nth-child(2) { animation: version-6__slide-char-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 3.7s forwards; }
+        div:nth-child(3) { animation: version-6__slide-char-3 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 3.8s forwards; }
+        div:nth-child(4) { animation: version-6__slide-char-4 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 3.9s forwards; }
+        div:nth-child(5) { animation: version-6__show-char 0.4s cubic-bezier(0.18, 0.65, 0, 1.01) 4.3s forwards; }
+      }
+    }
+    .area-2 {
+      animation:
+        fadein 0s ease 5.9s forwards,
+        fadeout 0s ease 9.2s forwards;
+      .frame {
+        div:nth-child(4)::after {
+          animation:
+            slide-top 0.2s ease 6.9s forwards,
+            slide-bottom 0.2s ease 7.1s reverse forwards,
+            slide-top 0.2s ease 7.3s forwards,
+            slide-bottom 0.2s ease 7.5s reverse forwards;
+        } 
+        div:nth-child(3)::after {
+          animation:
+            slide-bottom 0.2s ease 6.9s forwards,
+            slide-top 0.2s ease 7.1s reverse forwards,
+            slide-bottom 0.2s ease 7.3s forwards,
+            slide-top 0.2s ease 7.5s reverse forwards;
+        } 
+        div:nth-child(1)::after {
+          animation:
+            slide-left 0.2s ease 7.1s forwards,
+            slide-right 0.2s ease 7.3s reverse forwards;
+        } 
+        div:nth-child(2)::after {
+          animation:
+            slide-right 0.2s ease 7.1s forwards,
+            slide-left 0.2s ease 7.3s reverse forwards;
+        } 
+      }
+      .effect-2 .line div span { animation: effect-2__slide 0.4s ease 7.8s forwards; }
+      .char {
+        div:nth-child(1) { animation: version-6__slide-char-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 6.9s forwards; }
+        div:nth-child(2) { animation: version-6__slide-char-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 7.0s forwards; }
+        div:nth-child(3) { animation: version-6__slide-char-3 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 7.1s forwards; }
+        div:nth-child(4) { animation: version-6__slide-char-4 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 7.2s forwards; }
+        div:nth-child(5) { animation: version-6__show-char 0.4s cubic-bezier(0.18, 0.65, 0, 1.01) 7.6s forwards; }
+      }
+    }
+    .area-3 {
+      animation:
+        fadein 0s ease 9.2s forwards,
+        fadeout 0s ease 12.5s forwards;
+      .frame {
+        div:nth-child(4)::after {
+          animation:
+            slide-top 0.2s ease 10.2s forwards,
+            slide-bottom 0.2s ease 10.4s reverse forwards,
+            slide-top 0.2s ease 10.6s forwards,
+            slide-bottom 0.2s ease 10.8s reverse forwards;
+        } 
+        div:nth-child(3)::after {
+          animation:
+            slide-bottom 0.2s ease 10.2s forwards,
+            slide-top 0.2s ease 10.4s reverse forwards,
+            slide-bottom 0.2s ease 10.6s forwards,
+            slide-top 0.2s ease 10.8s reverse forwards;
+        } 
+        div:nth-child(1)::after {
+          animation:
+            slide-left 0.2s ease 10.4s forwards,
+            slide-right 0.2s ease 10.6s reverse forwards;
+        } 
+        div:nth-child(2)::after {
+          animation:
+            slide-right 0.2s ease 10.4s forwards,
+            slide-left 0.2s ease 10.6s reverse forwards;
+        } 
+      }
+      .effect-2 .line div span { animation: effect-2__slide 0.4s ease 11.1s forwards; }
+      .char {
+        div:nth-child(1) { animation: version-6__slide-char-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 10.2s forwards; }
+        div:nth-child(2) { animation: version-6__slide-char-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 10.3s forwards; }
+        div:nth-child(3) { animation: version-6__slide-char-3 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 10.4s forwards; }
+        div:nth-child(4) { animation: version-6__slide-char-4 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 10.5s forwards; }
+        div:nth-child(5) { animation: version-6__show-char 0.4s cubic-bezier(0.18, 0.65, 0, 1.01) 10.9s forwards; }
+      }
+    }
+    .area-4 {
+      animation:
+        fadein 0s ease 12.5s forwards;
+        //fadeout 0s ease 12.5s forwards;
+      .frame {
+        div:nth-child(4)::after {
+          animation:
+            slide-top 0.2s ease 13.5s forwards,
+            slide-bottom 0.2s ease 13.7s reverse forwards,
+            slide-top 0.2s ease 13.9s forwards,
+            slide-bottom 0.2s ease 14.1s reverse forwards;
+        } 
+        div:nth-child(3)::after {
+          animation:
+            slide-bottom 0.2s ease 13.5s forwards,
+            slide-top 0.2s ease 13.7s reverse forwards,
+            slide-bottom 0.2s ease 13.9s forwards,
+            slide-top 0.2s ease 14.1s reverse forwards;
+        } 
+        div:nth-child(1)::after {
+          animation:
+            slide-left 0.2s ease 13.7s forwards,
+            slide-right 0.2s ease 13.9s reverse forwards;
+        } 
+        div:nth-child(2)::after {
+          animation:
+            slide-right 0.2s ease 13.7s forwards,
+            slide-left 0.2s ease 13.9s reverse forwards;
+        } 
+      }
+      .effect-2 .line div span { animation: effect-2__slide 0.4s ease 14.7s forwards; }
+      .char {
+        div:nth-child(1) { animation: version-6__slide-char-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 13.5s forwards; }
+        div:nth-child(2) { animation: version-6__slide-char-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 13.7s forwards; }
+        div:nth-child(3) { animation: version-6__slide-char-3 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 13.9s forwards; }
+        div:nth-child(4) { animation: version-6__slide-char-4 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 14.1s forwards; }
+        div:nth-child(5) { animation: version-6__show-char 0.4s cubic-bezier(0.18, 0.65, 0, 1.01) 14.5s forwards; }
+      }
+    }
+  }
+  .stage-1__shutter-2 {
+    div:nth-child(1) {
+      animation:
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 4.9s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 6.3s forwards,
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 8.2s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 9.6s forwards,
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 11.5s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 12.9s forwards;
+    }
+    div:nth-child(2) {
+      animation:
+        version-6__down-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 5.1s forwards,
+        version-6__hidden-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 6.1s forwards,
+        version-6__down-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 8.4s forwards,
+        version-6__hidden-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 9.4s forwards,
+        version-6__down-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 11.7s forwards,
+        version-6__hidden-shutter-2 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 12.7s forwards;
+    }
+    div:nth-child(3) {
+      animation:
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 5.3s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 5.9s forwards,
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 8.6s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 9.2s forwards,
+        version-6__down-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 11.9s forwards,
+        version-6__hidden-shutter-1 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 12.5s forwards;
+    }
+  }
+
+  .version-6__end {
+    div:nth-child(1) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 15.1s forwards; }
+    div:nth-child(2) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 15.2s forwards; }
+    div:nth-child(3) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 15.5s forwards; }
+    div:nth-child(4) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 15.6s forwards; }
+    div:nth-child(5) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 15.9s forwards; }
+    div:nth-child(6) { animation: slide-right 0.6s cubic-bezier(0.99, 0.01, 0, 1.01) 16.0s forwards; }
+  }
+}
