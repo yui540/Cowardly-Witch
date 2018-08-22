@@ -9,10 +9,7 @@ const mapDispatchToProps = dispatch => ({
   changeChapter() {
     const chapter = 'Version_4'
     const description = config[chapter]
-    dispatch(changeChapter(
-      chapter,
-      description
-    ))
+    dispatch(changeChapter(chapter, description))
   }
 })
 
