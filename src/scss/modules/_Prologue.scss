@@ -404,6 +404,22 @@
   div:nth-child(3) { background-color: #43445b; }
 }
 
+/**
+ : skip
+ */
+.skip {
+  display: block;
+  position: absolute;
+  right: 0; bottom: 50px;
+  transform: translateX(100%);
+  cursor: pointer;
+  @include pc-layout { width: 200px; }
+  @include sp-layout { width: 140px; }
+  animation:
+    slide-left 0.3s ease 0.5s forwards,
+    slide-left 0.3s ease 8.7s reverse forwards;
+}
+
 
 /*************************************************************************************
  * animation

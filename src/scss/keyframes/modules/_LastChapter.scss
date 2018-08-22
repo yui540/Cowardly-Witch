@@ -1,0 +1,20 @@
+@keyframes last-chapter__show-frame {
+  from { transform: scale(1.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes last-chapter__show-logo {
+  0%   { transform: scale(0); }
+  40%  { transform: scale(1.1); }
+  60%  { transform: scale(1); }
+  80%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes last-chapter__show-decoration {
+  0%   { transform: translateY(-100%); }
+  40%  { transform: translateY(0%); }
+  60%  { transform: translateY(-5%); }
+  80%  { transform: translateY(-3%); }
+  100% { transform: translateY(-5%); }
+}
