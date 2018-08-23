@@ -1,8 +1,10 @@
 import React from 'react'
 import Menu from './Menu'
+import shareImg from '../../images/last-chapter/share.svg'
 
 export default ({ menu, openMenu, closeMenu }) => (
   <article className="last-chapter">
+    <div className="last-chapter__bg-help" />
     <div className="last-chapter__bg" />
     <div className="last-chapter__ball" />
     <div className="last-chapter__frame">
@@ -56,6 +58,9 @@ export default ({ menu, openMenu, closeMenu }) => (
         <i className="fab fa-instagram" />
       </a>
     </nav>
+    <a className="last-chapter__share" target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet?url=https://yui540.graphics&amp;text=『憶病な魔女は、Webサイトに魔法をかけた。』 / @yui540">
+      <img src={shareImg} alt="Twitterでシェアする" title="Twitterでシェアする" />  
+    </a>
     <button type="button" className="last-chapter__menu-btn" onClick={openMenu}>
       <div />
       <div />

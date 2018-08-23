@@ -1,6 +1,6 @@
 {
   "name": "Cowardly-Witch",
-  "version": "0.0.0",
+  "version": "7.0.0",
   "main": "webpack.config.js",
   "scripts": {
     "precommit": "lint-staged",

@@ -13,6 +13,25 @@ $last-chapter__theme-red: #c45c66;
 }
 
 /**
+ * bg-help
+ */
+.last-chapter__bg-help {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  opacity: 0;
+
+  &::before,
+  &::after {
+    content: ""; display: block;
+    width: 50%; height: 100%;
+  }
+  &::before { background-color: $last-chapter__theme-red; }
+  &::after  { background-color: $last-chapter__theme-green; }
+}
+
+/**
  * bg
  */
 .last-chapter__bg {
@@ -124,6 +143,8 @@ $last-chapter__theme-red: #c45c66;
   .star {
     position: absolute; top: 0;
     transform: translateY(-100%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 
     &::before,
     &::after { content: ""; display: block; }
@@ -135,7 +156,8 @@ $last-chapter__theme-red: #c45c66;
       background-color: $last-chapter__theme-white;
     }
     &::after {
-      width: 20px; height: 20px;
+      @include pc-layout { width: 35px; height: 35px; }
+      @include sp-layout { width: 20px; height: 20px; }
       background-image: url(../images/last-chapter/star.svg);
       background-size: 100% auto;
       background-position: center top;
@@ -162,6 +184,8 @@ $last-chapter__theme-red: #c45c66;
     @include sp-layout { right: 15%; }
     height: 80%;
     transform: translateY(-100%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 
     &::before,
     &::after { content: ""; display: block; }
@@ -324,6 +348,31 @@ $last-chapter__theme-red: #c45c66;
 }
 .last-chapter__menu-btn:hover::before { transform: scale(1); }
 
+/**
+ * share
+ */
+.last-chapter__share {
+  position: absolute;
+  display: block;
+  transform: scale(0);
+  @include pc-layout {
+    bottom: 50px;
+    right: 40px;
+  }
+  @include sp-layout {
+    bottom: 100px;
+    left: 20px;
+  }
+
+  img {
+    transition: all 0.4s ease 0s;
+    display: block;
+    @include pc-layout { height: 60px; }
+    @include sp-layout { height: 40px; }
+  }
+}
+.last-chapter__share:hover img { transform: scale(1.1); }
+
 
 /********************************************************************
   animation
@@ -332,6 +381,7 @@ $last-chapter__theme-red: #c45c66;
   &::before,
   &::after { animation: scale0-1 0.5s cubic-bezier(0.18, 0.66, 0.05, 0.96) 0s forwards; }
 }
+.last-chapter__bg-help { animation: fadein 0.4s ease 0.4s forwards; }
 .last-chapter__ball {
   animation: scale0-1 0.6s cubic-bezier(0.18, 0.66, 0.05, 0.96) 0.2s forwards;
   &::after { animation: fadein 1s ease 0.8s forwards; }
@@ -353,9 +403,12 @@ $last-chapter__theme-red: #c45c66;
   animation: last-chapter__show-logo 0.6s ease 1.6s forwards;
 }
 .last-chapter__decoration {
+  .star::after { animation: page__rotate-decoration 6s linear 0s infinite; }
+  .moon::after { animation: page__rotate-decoration 6s linear 0s infinite; }
   .star:nth-child(1) { animation: last-chapter__show-decoration 0.6s ease 1.7s forwards; }
   .star:nth-child(4) { animation: last-chapter__show-decoration 0.6s ease 1.8s forwards; }
   .star:nth-child(2) { animation: last-chapter__show-decoration 0.6s ease 1.9s forwards; }
   .moon              { animation: last-chapter__show-decoration 0.6s ease 2.0s forwards; }
   .star:nth-child(3) { animation: last-chapter__show-decoration 0.6s ease 2.1s forwards; }
 }
+.last-chapter__share { animation: last-chapter__show-logo 0.6s ease 2.2s forwards; }
