@@ -143,6 +143,8 @@ $last-chapter__theme-red: #c45c66;
   .star {
     position: absolute; top: 0;
     transform: translateY(-100%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 
     &::before,
     &::after { content: ""; display: block; }
@@ -154,7 +156,8 @@ $last-chapter__theme-red: #c45c66;
       background-color: $last-chapter__theme-white;
     }
     &::after {
-      width: 20px; height: 20px;
+      @include pc-layout { width: 35px; height: 35px; }
+      @include sp-layout { width: 20px; height: 20px; }
       background-image: url(../images/last-chapter/star.svg);
       background-size: 100% auto;
       background-position: center top;
@@ -181,6 +184,8 @@ $last-chapter__theme-red: #c45c66;
     @include sp-layout { right: 15%; }
     height: 80%;
     transform: translateY(-100%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 
     &::before,
     &::after { content: ""; display: block; }
@@ -373,6 +378,8 @@ $last-chapter__theme-red: #c45c66;
   animation: last-chapter__show-logo 0.6s ease 1.6s forwards;
 }
 .last-chapter__decoration {
+  .star::after { animation: page__rotate-decoration 6s linear 0s infinite; }
+  .moon::after { animation: page__rotate-decoration 6s linear 0s infinite; }
   .star:nth-child(1) { animation: last-chapter__show-decoration 0.6s ease 1.7s forwards; }
   .star:nth-child(4) { animation: last-chapter__show-decoration 0.6s ease 1.8s forwards; }
   .star:nth-child(2) { animation: last-chapter__show-decoration 0.6s ease 1.9s forwards; }
