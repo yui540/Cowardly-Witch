@@ -3,6 +3,7 @@ import Menu from './Menu'
 
 export default ({ menu, openMenu, closeMenu }) => (
   <article className="last-chapter">
+    <div className="last-chapter__bg-help" />
     <div className="last-chapter__bg" />
     <div className="last-chapter__ball" />
     <div className="last-chapter__frame">
