@@ -253,13 +253,27 @@ $last-chapter__theme-red: #c45c66;
   opacity: 0;
   color: $last-chapter__theme-black;
   @include pc-layout {
+    width: 550px;
     font-size: 16px;
+    margin: 0 auto;
     margin-top: 30px;
   }
   @include sp-layout {
     font-size: 11px;
     margin-top: 20px;
     padding: 0 10px;
+  }
+
+  img {
+    display: block;
+    @include pc-layout {
+      margin: 20px auto;
+      width: 550px;
+    }
+    @include sp-layout {
+      margin: 15px auto;
+      width: 90%;
+    }
   }
 }
 
