@@ -1,0 +1,100 @@
+$last-chapter__theme-black: #283c5f;
+$last-chapter__theme-white: #faf7d9;
+$last-chapter__theme-green: #c3ce5f;
+$last-chapter__theme-blue: #4aa9a4;
+$last-chapter__theme-red: #c45c66;
+
+.memories-page {
+  .page__title div {
+    background-image: url(../images/memories-page/title.svg);
+  }
+  @include pc-layout { .top { margin-top: 140px; } }
+}
+
+/**
+ * content
+ */
+.memories-page__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+
+  .content {
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    display: block;
+    padding-top: 20px;
+    align-self: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.4s ease 0s;
+    @include pc-layout {
+      width: 300px;
+      margin: 40px;
+    }
+    @include sp-layout {
+      width: 90%;
+      margin: 30px 0;
+    }
+    
+    &::after {
+      content: ""; display: block;
+      position: absolute;
+      top: 10px; left: 10px;
+      width: calc(100% - 20px); height: calc(100% - 20px);
+      border-radius: 10px;
+      border: dashed 2px $last-chapter__theme-black;
+      box-sizing: border-box;
+    }
+
+    .thumb {
+      display: block;
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      border-radius: 5px;
+    }
+
+    .color {
+      margin-top: 10px;
+      background-color: $last-chapter__theme-blue;
+    }
+
+    .title {
+      font-size: 16px;
+      padding: 10px 20px;
+      color: #fff;
+    }
+
+    .date {
+      font-size: 12px;
+      color: #fff;
+      padding: 0 25px;
+      padding-bottom: 20px;
+      display: block;
+      text-align: right;
+
+      &::before {
+        width: 16px; height: 16px;
+        content: ""; display: inline-block;
+        background-image: url(../images/memories-page/dog.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+      }
+    }
+  }
+  .content:hover { box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+}
+
+
+/******************************************************************************
+  animation
+*******************************************************************************/
+.memories-page__content {
+  animation: fadein 1s ease 0.7s forwards;
+}
