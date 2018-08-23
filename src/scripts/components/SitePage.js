@@ -25,6 +25,7 @@ export default class ProfilePage extends Component {
             このサイトは僕、 yui540のポートフォリサイトのバージョン7です。<br />
             数々のリニューアルを経て、僕は新しい試みのプロジェクトに取り掛かりました。<br />
             -------それが、Cowardly Witch Projectです。<br />
+            <img src="./images/site-page/0.jpg" alt="0" />
             このプロジェクトで重要なのが、Webサイトやアプリケーションを「魔法の世界」や「おとぎ話」のような世界観で表現することです。<br />
             それには、アニメーションやデザインの感性を重要視する必要があり、まず最初にそれを活かしたWebサイトを制作する必要がありました。<br />
             そこで完成したのが、このサイト「憶病な魔女」です。
@@ -62,6 +63,8 @@ export default class ProfilePage extends Component {
             各ページのデザインやアニメーションは、とにかく僕が思う「可愛い」を目一杯表現しました。<br />
             <img src="./images/site-page/5.png" alt="5" />
             <img src="./images/site-page/6.png" alt="6" />
+            <img src="./images/site-page/7.png" alt="7" />
+            <img src="./images/site-page/8.png" alt="8" />
             全体的にカラフルな色合いに仕上がったと思います。
           </p>
           <h2 className="page__sub-title">さいごに</h2>
