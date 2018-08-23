@@ -348,6 +348,31 @@ $last-chapter__theme-red: #c45c66;
 }
 .last-chapter__menu-btn:hover::before { transform: scale(1); }
 
+/**
+ * share
+ */
+.last-chapter__share {
+  position: absolute;
+  display: block;
+  transform: scale(0);
+  @include pc-layout {
+    bottom: 50px;
+    right: 40px;
+  }
+  @include sp-layout {
+    bottom: 100px;
+    left: 20px;
+  }
+
+  img {
+    transition: all 0.4s ease 0s;
+    display: block;
+    @include pc-layout { height: 60px; }
+    @include sp-layout { height: 40px; }
+  }
+}
+.last-chapter__share:hover img { transform: scale(1.1); }
+
 
 /********************************************************************
   animation
@@ -386,3 +411,4 @@ $last-chapter__theme-red: #c45c66;
   .moon              { animation: last-chapter__show-decoration 0.6s ease 2.0s forwards; }
   .star:nth-child(3) { animation: last-chapter__show-decoration 0.6s ease 2.1s forwards; }
 }
+.last-chapter__share { animation: last-chapter__show-logo 0.6s ease 2.2s forwards; }
