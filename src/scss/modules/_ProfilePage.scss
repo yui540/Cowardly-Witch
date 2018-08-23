@@ -1,0 +1,221 @@
+$last-chapter__theme-black: #283c5f;
+$last-chapter__theme-white: #faf7d9;
+$last-chapter__theme-green: #c3ce5f;
+$last-chapter__theme-blue: #4aa9a4;
+$last-chapter__theme-red: #c45c66;
+
+.profile-page {
+  .page__title div {
+    background-image: url(../images/profile-page/title.svg);
+  }
+}
+
+/**
+ * icon
+ */
+.profile-page__icon {
+  display: block;
+  margin: 0 auto;
+  transform: scale(0);
+  @include pc-layout {
+    width: 200px; height: 200px;
+    margin-top: 40px;
+  }
+  @include sp-layout {
+    width: 120px; height: 120px;
+    margin-top: 30px;
+  }
+}
+
+/**
+ : name
+ */
+.profile-page__name {
+  display: block;
+  margin: 0 auto;
+  transform: scale(0);
+  @include pc-layout {
+    height: 50px;
+    margin-top: 15px;
+  }
+  @include sp-layout {
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+/**
+ * table
+ */
+.profile-page__table {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  margin: 0 auto;
+  @include pc-layout {
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    width: 550px;
+    border-radius: 30px;
+  }
+  @include sp-layout {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+
+    h4 {
+      width: 30%;
+      background-color: rgba(196, 92, 102, 0.4);
+      padding: 10px;
+      box-sizing: border-box;
+      border-top: dashed 1px $last-chapter__theme-black;
+      border-right: dashed 1px $last-chapter__theme-black;
+      text-align: center;
+      @include pc-layout { font-size: 13px; }
+      @include sp-layout { font-size: 11px; }
+    }
+
+    p {
+      width: 70%;
+      padding: 10px;
+      box-sizing: border-box;
+      border-top: dashed 1px $last-chapter__theme-black;
+      @include pc-layout { font-size: 13px; }
+      @include sp-layout { font-size: 11px; }
+    }
+    .last { border-bottom: dashed 1px $last-chapter__theme-black; }
+  }
+
+  .link-btn {
+    position: absolute;
+    left: 25%; width: 50%;
+    margin: 0 auto;
+    background-color: $last-chapter__theme-red;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    display: block;
+    transition: all 0.3s ease 0s;
+    @include pc-layout {
+      bottom: -30px;
+      padding: 15px 0;
+      border-radius: 10px;
+    }
+    @include sp-layout {
+      bottom: -17.5px;
+      padding: 10px 0;
+      border-radius: 8px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      @include pc-layout { height: 30px; }
+      @include sp-layout { height: 15px; }
+    }
+  }
+  .link-btn:hover { transform: scale(1.1); }
+}
+
+/**
+ * job
+ */
+.profile-page__job {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  margin: 0 auto;
+  @include pc-layout {
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    width: 550px;
+    border-radius: 30px;
+  }
+  @include sp-layout {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  p {
+    text-align: center;
+    line-height: 2.2;
+    color: $last-chapter__theme-black;
+    @include pc-layout { font-size: 16px; padding-bottom: 40px; }
+    @include sp-layout { font-size: 11px; padding-bottom: 25px; }
+  }
+
+  .link-btn {
+    position: absolute;
+    left: 25%; width: 50%;
+    margin: 0 auto;
+    background-color: $last-chapter__theme-green;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    display: block;
+    transition: all 0.3s ease 0s;
+    @include pc-layout {
+      bottom: -30px;
+      padding: 15px 0;
+      border-radius: 10px;
+    }
+    @include sp-layout {
+      bottom: -17.5px;
+      padding: 10px 0;
+      border-radius: 8px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      @include pc-layout { height: 30px; }
+      @include sp-layout { height: 15px; }
+    }
+  }
+  .link-btn:hover { transform: scale(1.1); }
+}
+
+/**
+ * timeline
+ */
+.profile-page__timeline {
+  position: relative;
+  margin: 0 auto;
+  @include pc-layout { width: 550px; height: 400px; margin-top: 20px; }
+  @include sp-layout { width: 90%; height: 300px; margin-top: 20px; }
+
+  iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+}
+
+
+/*************************************************************************
+  animation
+**************************************************************************/
+.profile-page__icon { animation: profile-page__jump 0.6s cubic-bezier(0.77, 0.01, 0.25, 1) 0.6s forwards; }
+.profile-page__name { animation: profile-page__jump 0.6s cubic-bezier(0.77, 0.01, 0.25, 1) 0.8s forwards; }
+
+
+/*************************************************************************
+  keyframes
+**************************************************************************/
+@keyframes profile-page__jump {
+  0%   { transform: scale(0); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,344 @@
+$last-chapter__theme-black: #283c5f;
+$last-chapter__theme-white: #faf7d9;
+$last-chapter__theme-green: #c3ce5f;
+$last-chapter__theme-blue: #4aa9a4;
+$last-chapter__theme-red: #c45c66;
+
+.page {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+/**
+ * bg
+ */
+.page__bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  &::before, &::after {
+    content: ""; display: block;
+    position: absolute; left: 0;
+    width: 100%;
+    @include pc-layout { height: 60px; }
+    @include sp-layout { height: 40px; }
+  }
+  &::before { transform: translateY(-100%); background-color: $last-chapter__theme-red; top: 0; }
+  &::after  { transform: translateY(100%); background-color: $last-chapter__theme-green; bottom: 0; }
+}
+
+/**
+ * decoration
+ */
+.page__decoration {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  @include pc-layout { top: 60px; height: calc(100% - 60px); }
+  @include sp-layout { top: 40px; height: calc(100% - 40px); }
+
+  div {
+    position: absolute; top: 0;
+    transform: translateY(-100%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    @include pc-layout { width: 30px; }
+    @include sp-layout { width: 15px; }
+
+    &::before, &::after {
+      content: ""; display: block;
+    }
+    &::before {
+      margin-left: calc(50% - 0.5px);
+      width: 1px;
+      background-color: $last-chapter__theme-black;
+      @include pc-layout { height: calc(100% - 30px); }
+      @include sp-layout { height: calc(100% - 15px); }
+    }
+    &::after {
+      @include pc-layout { width: 30px; height: 30px; }
+      @include sp-layout { width: 15px; height: 15px; }
+      margin-top: -5px;
+      background-image: url(../images/page/star.svg);
+      background-position: center top;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  @include pc-layout {
+    div:nth-child(1) { left: 10%; height: 30%; }
+    div:nth-child(2) { left: 20%; height: 25%; }
+    div:nth-child(3) {
+      right: 20%; height: 45%;
+      &::after { background-image: url(../images/page/moon.svg); }
+    }
+    div:nth-child(4) { right: 10%; height: 30%; }
+  }
+  @include sp-layout {
+    div:nth-child(1) { left: 6%; height: 20%; }
+    div:nth-child(2) { left: 12%; height: 12%; }
+    div:nth-child(3) {
+      right: 12%; height: 30%;
+      &::after { background-image: url(../images/page/moon.svg); }
+    }
+    div:nth-child(4) { right: 6%; height: 20%; }
+  }
+}
+
+/**
+ * frame
+ */
+.page__frame {
+  position: absolute;
+  box-sizing: border-box;
+  opacity: 0;
+  @include pc-layout {
+    top: 30px; left: 30px;
+    width: calc(100% - 60px); height: calc(100% - 60px);
+    border: dashed 5px $last-chapter__theme-black;
+    border-radius: 40px;
+  }
+  @include sp-layout {
+    top: 10px; left: 10px;
+    width: calc(100% - 20px); height: calc(100% - 20px);
+    border: dashed 2.5px $last-chapter__theme-black;
+    border-radius: 30px;
+  }
+}
+
+/**
+ * inner
+ */
+.page__inner {
+  position: absolute;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  @include pc-layout {
+    top: 60px; left: 40px;
+    width: calc(100% - 80px); height: calc(100% - 120px);
+  }
+  @include sp-layout {
+    top: 40px; left: 20px;
+    width: calc(100% - 40px); height: calc(100% - 80px);
+  }
+}
+
+/**
+ * title
+ */
+.page__title {
+  position: relative;
+  margin: 0 auto;
+  opacity: 0;
+  @include pc-layout {
+    width: 450px; height: 65px;
+    margin-top: 50px;
+  }
+  @include sp-layout {
+    width: 70%; height: 40px;
+    margin-top: 80px;
+  }
+
+  &::before, &::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    box-sizing: border-box;
+  }
+  &::before { background-color: $last-chapter__theme-black; opacity: 0.5; }
+  &::after  { border: solid 3px $last-chapter__theme-black; }
+  @include pc-layout { &::before { transform: translate(8px, -8px); } }
+  @include sp-layout { &::before { transform: translate(6px, -6px); } }
+
+  div {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: auto 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+/**
+ * project
+ */
+.page__project {
+  position: relative;
+  margin: 0 auto;
+  opacity: 0;
+  @include pc-layout {
+    width: 450px; height: 15px;
+    margin-top: 5px;
+  }
+  @include sp-layout {
+    width: 70%; height: 10px;
+    margin-top: 4px;
+  }
+
+  &::before, &::after {
+    content: ""; display: block;
+    position: absolute; left: 0;
+    width: 100%;
+  }
+  &::before {
+    height: 1px; top: calc(50% - 0.5px);
+    background-color: $last-chapter__theme-black;
+  }
+  &::after {
+    top: 0; left: calc(25%);
+    width: 50%; height: 90%;
+    background-color: #fff;
+    background-image: url(../images/page/project.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/**
+ * sub-title
+ */
+.page__sub-title {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  color: $last-chapter__theme-black;
+  border-bottom: dashed 1px $last-chapter__theme-black;
+  opacity: 0;
+  @include pc-layout {
+    width: 550px;
+    padding: 5px 0;
+    font-size: 22px;
+    margin-top: 60px;
+  }
+  @include sp-layout {
+    width: 85%;
+    padding: 5px 0;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+
+  &::before, &::after {
+    content: ""; display: block;
+    position: absolute;
+    background-image: url(../images/page/flower.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include pc-layout { bottom: -7.5px; width: 15px; height: 15px; }
+    @include sp-layout { bottom: -5px; width: 10px; height: 10px; }
+  }
+  @include pc-layout {
+    &::before { left: -7.5px; }
+    &::after  { right: -7.5px; }
+  }
+  @include sp-layout {
+    &::before { left: -5px; }
+    &::after  { right: -5px; }
+  }
+}
+
+/**
+ * description
+ */
+.page__description {
+  text-align: center;
+  line-height: 2.2;
+  opacity: 0;
+  color: $last-chapter__theme-black;
+  @include pc-layout {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  @include sp-layout {
+    font-size: 11px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+}
+
+/**
+ * space
+ */
+.page__space {
+  @include pc-layout { height: 100px; }
+  @include sp-layout { height: 80px; }
+}
+
+/**
+ * close-btn
+ */
+.page__close-btn {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transform: translateX(100%);
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+  @include pc-layout {
+    top: -25px; right: -25px;
+    width: 140px; height: 140px;
+  }
+  @include sp-layout {
+    top: -15px; right: -15px;
+    width: 80px; height: 80px;
+  }
+
+  div {
+    position: absolute;
+    background-color: $last-chapter__theme-black;
+    @include pc-layout {
+      top: calc(50% - 1.5px); left: 40px;
+      width: calc(100% - 80px); height: 3px;
+      border-radius: 10px;
+    }
+    @include sp-layout {
+      top: calc(50% - 1.5px); left: 20px;
+      width: calc(100% - 40px); height: 3px;
+      border-radius: 10px;
+    }
+  }
+  div:nth-child(1) { transform: rotate(45deg); }
+  div:nth-child(2) { transform: rotate(-45deg); }
+
+  &::after {
+    content: ""; display: block;
+    position: absolute;
+    top: 5px; left: 5px;
+    width: calc(100% - 10px); height: calc(100% - 10px);
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: dashed 1px $last-chapter__theme-black;
+  }
+}
+.page__close-btn:hover { box-shadow: 0 0 40px rgba(0,0,0,0.7); }
+
+
+/***********************************************************************
+  animation
+************************************************************************/
+.page__bg {
+  &::before { animation: slide-bottom 0.6s cubic-bezier(0.99, 0.04, 0.01, 0.99) 0s forwards; }
+  &::after  { animation: slide-top 0.6s cubic-bezier(0.99, 0.04, 0.01, 0.99) 0s forwards; }
+}
+.page__frame { animation: page__show-frame 0.8s cubic-bezier(0.99, 0.04, 0.01, 0.99) 0.2s forwards; }
+.page__title { animation: page__show-title 1s ease 0.4s forwards; }
+.page__project { animation: page__show-project 1s ease 0.5s forwards; }
+.page__decoration {
+  div::after { animation: page__rotate-decoration 6s linear 0s infinite; }
+  div:nth-child(1) { animation: page__down-decoration 0.6s ease 0.8s forwards; }
+  div:nth-child(3) { animation: page__down-decoration 0.6s ease 0.9s forwards; }
+  div:nth-child(2) { animation: page__down-decoration 0.6s ease 1.0s forwards; }
+  div:nth-child(4) { animation: page__down-decoration 0.6s ease 1.1s forwards; }
+}
+.page__sub-title { animation: page__show-sub-title 1s ease 0.6s forwards; }
+.page__description { animation: fadein 1s ease 0.7s forwards; }
+.page__close-btn { animation: slide-left 0.6s ease 1.2s forwards; }
