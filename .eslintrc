@@ -17,6 +17,8 @@
     "react/self-closing-comp": 0,
     "arrow-parens": 0,
     "eact/destructuring-assignment": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/no-array-index-key": 0,
+    "arrow-body-style": 0
   }
 }
