@@ -237,7 +237,7 @@ $last-chapter__theme-red: #c45c66;
   animation
 *****************************************************************/
 .menu[data-state="open"] {
-  animation: slide-bottom 0s ease 0s forwards;
+  animation: slide-bottom 0.05s ease 0s forwards;
 
   .menu__space {
     div:nth-child(1) { animation: menu__show-space-bg 0.6s ease 0.1s forwards; }

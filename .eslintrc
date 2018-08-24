@@ -7,7 +7,7 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
-  rules: {
+  "rules": {
     "no-console": 0,
     "semi": [2, "never"],
     "comma-dangle": 0,
@@ -20,6 +20,8 @@
     "react/prop-types": 0,
     "react/no-array-index-key": 0,
     "no-trailing-spaces": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
     "arrow-body-style": 0
   }
 }

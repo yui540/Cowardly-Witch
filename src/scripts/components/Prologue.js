@@ -45,8 +45,8 @@ export default ({ changeChapter, skipChapter }) => (
       <div />
       <div onAnimationEnd={changeChapter} />
     </div>
-    <button className="skip-btn" type="button" onClick={skipChapter}>
+    <div className="prologue__skip" onClick={skipChapter}>
       <img className="skip" src={skipImg} alt="スキップボタン" />
-    </button>
+    </div>
   </div>
 )
