@@ -50,7 +50,7 @@ export default ({ menu, openMenu, closeMenu }) => (
         <i className="fab fa-youtube" />
       </a>
       <a
-        href="https://www.instagram.com/yui540net/"
+        href="https://www.instagram.com/yui540graphics/"
         target="_blank"
         rel="noopener noreferrer"
         title="Instagram"
