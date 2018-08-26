@@ -105,13 +105,21 @@
           <img src="./images/thumb.svg" alt="少々お待ちください。" />
         </section>
       </section>
+      <footer class="footer">
+        <div class="footer__inner">
+          <img class="footer__yui540" src="./images/yui540.svg" alt="yui540" />
+          <div class="footer__line"></div>
+          <img class="footer__copyright" src="./images/copyright.svg" alt="copyright" />
+        </div>
+      </footer>
     </main>
     <script>
       (function() {
         var load_view = document.getElementsByClassName('load-view')[0]
         load_view.addEventListener('animationend', function(e) {
-          if(e.animationName === 'fadeout')
+          if(e.animationName === 'fadeout') {
             load_view.style.display = 'none'
+          }
         })
       })()
     </script>
