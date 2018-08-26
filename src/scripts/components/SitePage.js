@@ -22,21 +22,21 @@ export default class ProfilePage extends Component {
           </section>
           <section className="page__project"></section>
           <p className="page__description top">
-            このサイトは僕、 yui540のポートフォリサイトのバージョン7です。<br />
+            このサイトは僕、 yui540のポートフォリオサイトのバージョン7です。<br />
             数々のリニューアルを経て、僕は新しい試みのプロジェクトに取り掛かりました。<br />
             -------それが、Cowardly Witch Projectです。<br />
             <img src="./images/site-page/0.jpg" alt="0" />
             このプロジェクトで重要なのが、Webサイトやアプリケーションを「魔法の世界」や「おとぎ話」のような世界観で表現することです。<br />
             それには、アニメーションやデザインの感性を重要視する必要があり、まず最初にそれを活かしたWebサイトを制作する必要がありました。<br />
-            そこで完成したのが、このサイト「憶病な魔女」です。
+            そこで完成したのが、このサイト「臆病な魔女」です。
           </p>
-          <h2 className="page__sub-title">憶病な魔女とは</h2>
+          <h2 className="page__sub-title">臆病な魔女とは</h2>
           <p className="page__description">
-            このサイトのテーマである「憶病な魔女」とは、魔女になりたいという気持ちと、僕自身の憶病な性格が混ざり合って出来た僕自身の属性です。 <br />
+            このサイトのテーマである「臆病な魔女」とは、魔女になりたいという気持ちと、僕自身の臆病な性格が混ざり合って出来た僕自身の属性です。 <br />
             <img src="./images/site-page/1.png" alt="1" />
             なので、「yui540=憶病な魔女」です。<br />
-            そんな憶病な魔女がWebサイトに感情を持たせたいという思いから、このサイトに魔法をかけました。<br />
-            「憶病な魔女は、Webサイトに魔法をかけた。」
+            そんな臆病な魔女がWebサイトに感情を持たせたいという思いから、このサイトに魔法をかけました。<br />
+            「臆病な魔女は、Webサイトに魔法をかけた。」
           </p>
           <h2 className="page__sub-title">オープニングアニメーションの構成</h2>
           <p className="page__description">
