@@ -1,0 +1,106 @@
+* {
+  font-family: 'Boku';
+  margin: 0;
+  padding: 0;
+}
+
+img { vertical-align: bottom; }
+
+input, textarea, button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+a { text-decoration: none; }
+
+iframe { border: none; }
+
+
+/**
+ * load-view
+ */
+.load-view {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #283c5f;
+  display: flex;
+  overflow: hidden;
+}
+.load-view::after {
+  content: ""; display: block;
+  position: absolute;
+  top: calc(50% - 65vmax); left: calc(50% - 65vmax);
+  width: 130vmax; height: 130vmax;
+  border-radius: 50%;
+  background-color: #283c5f;
+  transform: scale(0);
+}
+.load-view div {
+  position: relative;
+  width: 20%; height: 100%;
+}
+.load-view div::before,
+.load-view div::after {
+  content: ""; display: block;
+  position: absolute;
+}
+.load-view div::before {
+  bottom: 0; left: calc(50% - 2.5vmin);
+  width: 5vmin; height: 5vmin;
+  background-color: #ce9740;
+  border-radius: 50%;
+  transform: translateY(-100vh);
+}
+.load-view div::after {
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #ce9740;
+  transform: scaleX(0);
+}
+
+.load-view div:nth-child(3)::before { animation: bound 0.3s cubic-bezier(0.48, 0.09, 0.77, 0.26) 0s forwards; }
+.load-view div:nth-child(2)::before { animation: bound 0.3s cubic-bezier(0.48, 0.09, 0.77, 0.26) 0.1s forwards; }
+.load-view div:nth-child(4)::before { animation: bound 0.3s cubic-bezier(0.48, 0.09, 0.77, 0.26) 0.2s forwards; }
+.load-view div:nth-child(1)::before { animation: bound 0.3s cubic-bezier(0.48, 0.09, 0.77, 0.26) 0.3s forwards; }
+.load-view div:nth-child(5)::before { animation: bound 0.3s cubic-bezier(0.48, 0.09, 0.77, 0.26) 0.4s forwards; }
+
+.load-view div:nth-child(3)::after { animation: scaleX 0.3s cubic-bezier(0.75, 0.03, 0.26, 1) 0.3s forwards; }
+.load-view div:nth-child(2)::after { animation: scaleX 0.3s cubic-bezier(0.75, 0.03, 0.26, 1) 0.4s forwards; }
+.load-view div:nth-child(4)::after { animation: scaleX 0.3s cubic-bezier(0.75, 0.03, 0.26, 1) 0.5s forwards; }
+.load-view div:nth-child(1)::after { animation: scaleX 0.3s cubic-bezier(0.75, 0.03, 0.26, 1) 0.6s forwards; }
+.load-view div:nth-child(5)::after { animation: scaleX 0.3s cubic-bezier(0.75, 0.03, 0.26, 1) 0.7s forwards; }
+
+.load-view::after { animation: scale 0.5s cubic-bezier(1, 0.01, 0, 0.99) 1s forwards; }
+.load-view { animation: fadeout 0.2s ease 1.5s forwards; }
+
+@keyframes bound {
+  0%   { transform: translateY(-100vh); }
+  35%  { transform: translateY(0vh); }
+  70%  { transform: translateY(-3vh); }
+  100% { transform: translateY(0vh); }
+}
+@keyframes scaleX {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes scale {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+
+/**
+ * main-visual
+ */
+.main-visual {
+  width: 100%; height: 100vh;
+  background-color: #283c5f;
+}
