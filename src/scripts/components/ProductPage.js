@@ -22,7 +22,7 @@ export default class ProfilePage extends Component {
             <div></div>
           </section>
           <section className="page__project"></section>
-          <h2 className="page__sub-title top">アプリ・Webなど</h2>
+          <h2 className="page__sub-title top">アプリ・Webサービスなど</h2>
           <section className="product-page__content">
             {products.app.map((app, key) => {
               return (
@@ -64,6 +64,22 @@ export default class ProfilePage extends Component {
                     <h4 className="title">{design.name}</h4>
                     <p className="description">{design.description}</p>
                     <small className="date">{design.date}</small>
+                  </div>
+                </a>
+              )
+            })}
+          </section>
+
+          <h2 className="page__sub-title">ライブラリ</h2>
+          <section className="product-page__content">
+            {products.lib.map((lib, key) => {
+              return (
+                <a className="content" href={lib.link} key={key} target="_blank" rel="noopener noreferrer">
+                  <div className="inner">
+                    <img src={lib.thumb} alt={lib.name} />
+                    <h4 className="title">{lib.name}</h4>
+                    <p className="description">{lib.description}</p>
+                    <small className="date">{lib.date}</small>
                   </div>
                 </a>
               )
