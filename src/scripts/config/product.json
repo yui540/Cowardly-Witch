@@ -68,6 +68,13 @@
   ],
   "design": [
     {
+      "name": "バーチャルニート公式サイト",
+      "link": "https://virtual-neet.magical-girl.site/",
+      "thumb": "./images/product/virtual-neet.png",
+      "description": "『8人のバーチャルニートが集結。』",
+      "date": "2018/09/23"
+    },
+    {
       "name": "由比ヶ浜結衣生誕2018 - 非公式サイト",
       "link": "https://yui.magical-girl.site/",
       "thumb": "./images/product/yui.png",
