@@ -23,7 +23,7 @@ export default class ProfilePage extends Component {
           <section className="page__project"></section>
           <p className="page__description top">
             このサイトは僕、 yui540のポートフォリオサイトのバージョン7です。<br />
-            数々のリニューアルを経て、僕は新しい試みのプロジェクトに取り掛かりました。<br />
+            数々のリニューアルを経て、僕は新しい試みのプロジェクトに取り掛かりました。<br />
             -------それが、Cowardly Witch Projectです。<br />
             <img src="./images/site-page/0.jpg" alt="0" />
             このプロジェクトで重要なのが、Webサイトやアプリケーションを「魔法の世界」や「おとぎ話」のような世界観で表現することです。<br />
@@ -32,7 +32,7 @@ export default class ProfilePage extends Component {
           </p>
           <h2 className="page__sub-title">臆病な魔女とは</h2>
           <p className="page__description">
-            このサイトのテーマである「臆病な魔女」とは、魔女になりたいという気持ちと、僕自身の臆病な性格が混ざり合って出来た僕自身の属性です。 <br />
+            このサイトのテーマである「臆病な魔女」とは、魔女になりたいという気持ちと、僕自身の臆病な性格が混ざり合って出来た僕自身の属性です。 <br />
             <img src="./images/site-page/1.png" alt="1" />
             なので、「yui540=憶病な魔女」です。<br />
             そんな臆病な魔女がWebサイトに感情を持たせたいという思いから、このサイトに魔法をかけました。<br />
@@ -60,7 +60,7 @@ export default class ProfilePage extends Component {
           </p>
           <h2 className="page__sub-title">各ページ</h2>
           <p className="page__description">
-            各ページのデザインやアニメーションは、とにかく僕が思う「可愛い」を目一杯表現しました。<br />
+            各ページのデザインやアニメーションは、とにかく僕が思う「可愛い」を目一杯表現しました。<br />
             <img src="./images/site-page/5.png" alt="5" />
             <img src="./images/site-page/6.png" alt="6" />
             <img src="./images/site-page/7.png" alt="7" />
@@ -69,7 +69,7 @@ export default class ProfilePage extends Component {
           </p>
           <h2 className="page__sub-title">さいごに</h2>
           <p className="page__description">
-          これからも、このサイトのような「魔法の世界」や「おとぎ話」のような世界観のWebサイトやアプリケーションを作っていきます。<br />
+          これからも、このサイトのような「魔法の世界」や「おとぎ話」のような世界観のWebサイトやアプリケーションを作っていきます。<br />
           ぜひ、お楽しみに。
           </p>
           <section className="page__space"></section>
