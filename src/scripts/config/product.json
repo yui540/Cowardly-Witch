@@ -68,6 +68,13 @@
   ],
   "design": [
     {
+      "name": "夜空ノ贈リ物",
+      "link": "https://sky-night-gift.magical-girl.site",
+      "thumb": "./images/product/yozora.png",
+      "description": "『ようこそ、臆病な魔女教団へ。』",
+      "date": "2018/10/08"
+    },
+    {
       "name": "バーチャルニート公式サイト",
       "link": "https://virtual-neet.magical-girl.site/",
       "thumb": "./images/product/virtual-neet.png",
@@ -82,7 +89,7 @@
       "date": "2018/06/18"
     },
     {
-      "name": "夜空ノ贈リ物",
+      "name": "夜空ノ贈リ物 告知用サイト",
       "link": "https://yui540.graphics/content/sky-night-gift/",
       "thumb": "./images/product/sky-night-gift.png",
       "description": "『臆病な魔女は、たくさんの方々に感謝の気持ちを。』",
@@ -103,34 +110,6 @@
       "date": "???"
     },
     {
-      "name": "ポートフォリオ v4",
-      "link": "https://www.youtube.com/watch?v=60pgDEnqD3s",
-      "thumb": "./images/product/v4.png",
-      "description": "ポートフォリオサイトのバージョン4です。",
-      "date": "???"
-    },
-    {
-      "name": "ポートフォリオ v3",
-      "link": "https://www.youtube.com/watch?v=2HgOegj2Ogw",
-      "thumb": "./images/product/v3.png",
-      "description": "ポートフォリオサイトのバージョン3です。",
-      "date": "???"
-    },
-    {
-      "name": "ポートフォリオ v2",
-      "link": "https://www.youtube.com/watch?v=rwXFOos8gU8",
-      "thumb": "./images/product/v2.png",
-      "description": "ポートフォリオサイトのバージョン2です。",
-      "date": "???"
-    },
-    {
-      "name": "ポートフォリオ v1",
-      "link": "https://www.youtube.com/watch?v=cW4WDzMjIBI",
-      "thumb": "./images/product/v1.png",
-      "description": "ポートフォリオサイトのバージョン1です。",
-      "date": "???"
-    },
-    {
       "name": "ChocolateCake",
       "link": "https://chocolate-cake.yuki540.com/",
       "thumb": "./images/product/chocolate-cake.png",
@@ -139,13 +118,6 @@
     }
   ],
   "lib": [
-    {
-      "name": "shuvi-lib",
-      "link": "https://github.com/yuki540net/shuvi-lib",
-      "thumb": "./images/product/shuvi-lib.jpg",
-      "description": "YouTube IFrame Player APIをゆるふわラッピングしたライブラリ",
-      "date": "2017/05/14"
-    },
     {
       "name": "onsen-node",
       "link": "https://github.com/yuki540net/onsen-node",
