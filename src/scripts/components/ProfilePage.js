@@ -31,18 +31,23 @@ export default class ProfilePage extends Component {
             魔法少女になるため、プログラミングを学んだが、<br />
             まず少女でないことに気づき、人生が狂う。<br />
             ----そして、現在は<br />
-            年齢を考えて魔女になりたいという気持ちと、自分の憶病な性格から<br />
-            「憶病な魔女」という属性を手に入れた。<br />
+            年齢を考えて魔女になりたいという気持ちと、自分の臆病な性格から<br />
+            「臆病な魔女」という属性を手に入れた。<br />
             ※性別は、男です。
           </p>
           <h2 className="page__sub-title">僕の構成要素</h2>
           <section className="profile-page__table">
             <div className="inner">
-              <h4>属性</h4><p>憶病な魔女</p>
+              <h4>状態</h4><p>大体、いつも病んでる</p>
+              <h4>性別</h4><p>男</p>
+              <h4>属性</h4><p>臆病な魔女</p>
               <h4>誕生日</h4><p>1996/11/09 21歳</p>
               <h4>特徴</h4><p>心が不安定で頭が悪い</p>
-              <h4>好き</h4><p>由比ヶ浜結衣, ミライアカリ, さユり, ClariS</p>
-              <h4 className="last">食べ物</h4><p className="last">和菓子, 駄菓子, 肉じゃが</p>
+              <h4>行動</h4><p>プログラミングしたり、Webモーションしたり、デザインしたり、お絵描きしたり。</p>
+              <h4>好き</h4><p>由比ヶ浜結衣, ミライアカリ, さユり, loundraw, 寺田てら, オーイシマサヨシ</p>
+              <h4>Kyash</h4><p>yui540</p>
+              <h4>FANBOX</h4><p><a href="https://www.pixiv.net/fanbox/creator/16972511" target="_blank" rel="noopener noreferrer">yui540を応援する</a></p>
+              <h4 className="last">食べ物</h4><p className="last">和菓子, 駄菓子, 肉じゃが, レーズン</p>
             </div>
             <a className="link-btn" rel="noopener noreferrer" href="http://amzn.asia/3Xubapz" target="_blank">
               <img src={wishlist} alt="ほしい物リスト" />
@@ -54,9 +59,9 @@ export default class ProfilePage extends Component {
               やっはろー！<br />
               実は個人でもお仕事を受け付けております。<br />
               LP,同人サイト,ポートフォリオサイトなどの<br />
-              制作をお手伝いさせていただきます。<br />
+              制作をお手伝いさせていただきます。（ペライチのWebページの場合、6万〜8万円を目安）<br />
               お仕事のご依頼は、Twitterとかで<br />
-              DM飛ばしてね♫
+              DM飛ばしてね。
             </p>
             <a className="link-btn" rel="noopener noreferrer" href="https://twitter.com/yui540" target="_blank">
               <img src={job} alt="お仕事のご依頼" />
