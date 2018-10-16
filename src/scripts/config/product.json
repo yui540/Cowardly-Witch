@@ -133,7 +133,21 @@
       "date": "2016/09/25"
     }
   ],
-  "imgs": [
+  "illust": [
+    {
+      "name": "『１＋１＝？』『３』",
+      "link": "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=71197248",
+      "thumb": "./images/product/illust-2.png",
+      "description": "ポンコツな女の子を描いた。",
+      "date": "2018/10/15"
+    },
+    {
+      "name": "よろしくね。",
+      "link": "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=71177778",
+      "thumb": "./images/product/illust-1.png",
+      "description": "はじめまして、yui540だよ。よろしくね。",
+      "date": "2018/10/14"
+    },
     {
       "name": "VTuber壁紙",
       "link": "https://github.com/yui540/vtuber-wallpaper",
