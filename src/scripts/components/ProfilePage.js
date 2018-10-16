@@ -24,7 +24,7 @@ export default class ProfilePage extends Component {
             <div></div>
           </section>
           <section className="page__project"></section>
-          <img className="profile-page__icon" src="./images/profile-page/icon.svg" alt="アイコン" />
+          <img className="profile-page__icon" src="./images/profile-page/icon.png" alt="アイコン" />
           <img className="profile-page__name" src={name} alt="yui540" />
           <h2 className="page__sub-title">どんな人物？</h2>
           <p className="page__description">

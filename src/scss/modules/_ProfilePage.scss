@@ -18,12 +18,14 @@ $last-chapter__theme-red: #c45c66;
   margin: 0 auto;
   transform: scale(0);
   @include pc-layout {
-    width: 200px; height: 200px;
+    width: 140px; height: 140px;
     margin-top: 40px;
+    margin-bottom: 10px;
   }
   @include sp-layout {
-    width: 120px; height: 120px;
+    width: 90px; height: 90px;
     margin-top: 30px;
+    margin-bottom: 20px;
   }
 }
 
