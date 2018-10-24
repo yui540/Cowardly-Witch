@@ -158,6 +158,13 @@
   ],
   "movie": [
     {
+      "name": "まじょのおとしもの。 オープニング",
+      "link": "https://youtu.be/svP4F3HH9Qk",
+      "thumb": "./images/product/vtuber-op.png",
+      "description": "『まじょのおとしもの。』のオープニングアニメーションです。",
+      "date": "2018/10/24"
+    },
+    {
       "name": "ニートに学ぶCSS Animation演出講座 放課後 part2",
       "link": "https://www.youtube.com/watch?v=D9FgXH6HX6g",
       "thumb": "./images/product/neet_study_live.png",
