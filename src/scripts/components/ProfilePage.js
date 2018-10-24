@@ -38,11 +38,11 @@ export default class ProfilePage extends Component {
           <h2 className="page__sub-title">僕の構成要素</h2>
           <section className="profile-page__table">
             <div className="inner">
-              <h4>状態</h4><p>大体、いつも病んでる</p>
+              <h4>状態</h4><p>病んでる</p>
               <h4>性別</h4><p>男</p>
               <h4>属性</h4><p>臆病な魔女</p>
               <h4>誕生日</h4><p>1996/11/09 21歳</p>
-              <h4>特徴</h4><p>心が不安定で頭が悪い</p>
+              <h4>特徴</h4><p>病弱・臆病・ポンコツ・精神不安定</p>
               <h4>行動</h4><p>プログラミングしたり、Webモーションしたり、デザインしたり、お絵描きしたり。</p>
               <h4>好き</h4><p>由比ヶ浜結衣, ミライアカリ, さユり, loundraw, 寺田てら, オーイシマサヨシ</p>
               <h4>Kyash</h4><p>yui540</p>
