@@ -38,22 +38,6 @@ export default class ProfilePage extends Component {
             })}
           </section>
 
-          <h2 className="page__sub-title">お仕事実績</h2>
-          <section className="product-page__content">
-            {products.works.map((work, key) => {
-              return (
-                <a className="content" href={work.link} key={key} target="_blank" rel="noopener noreferrer">
-                  <div className="inner">
-                    <img src={work.thumb} alt={work.name} />
-                    <h4 className="title">{work.name}</h4>
-                    <p className="description">{work.description}</p>
-                    <small className="date">{work.date}</small>
-                  </div>
-                </a>
-              )
-            })}
-          </section>
-
           <h2 className="page__sub-title">デザイン</h2>
           <section className="product-page__content">
             {products.design.map((design, key) => {
@@ -64,6 +48,22 @@ export default class ProfilePage extends Component {
                     <h4 className="title">{design.name}</h4>
                     <p className="description">{design.description}</p>
                     <small className="date">{design.date}</small>
+                  </div>
+                </a>
+              )
+            })}
+          </section>
+
+          <h2 className="page__sub-title">お仕事実績</h2>
+          <section className="product-page__content">
+            {products.works.map((work, key) => {
+              return (
+                <a className="content" href={work.link} key={key} target="_blank" rel="noopener noreferrer">
+                  <div className="inner">
+                    <img src={work.thumb} alt={work.name} />
+                    <h4 className="title">{work.name}</h4>
+                    <p className="description">{work.description}</p>
+                    <small className="date">{work.date}</small>
                   </div>
                 </a>
               )
