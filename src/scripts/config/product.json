@@ -51,6 +51,13 @@
     }
   ],
   "works": [
+    {
+      "name": "バーチャルニート公式サイト",
+      "link": "https://virtual-neet.magical-girl.site/",
+      "thumb": "./images/product/virtual-neet.png",
+      "description": "『8人のバーチャルニートが集結。』",
+      "date": "2018/09/23"
+    },
   	{
       "name": "初音ミク HomeLive in Gatebox",
       "link": "https://gatebox.ai/homelive/",
@@ -73,13 +80,6 @@
       "thumb": "./images/product/yozora.png",
       "description": "『ようこそ、臆病な魔女教団へ。』",
       "date": "2018/10/08"
-    },
-    {
-      "name": "バーチャルニート公式サイト",
-      "link": "https://virtual-neet.magical-girl.site/",
-      "thumb": "./images/product/virtual-neet.png",
-      "description": "『8人のバーチャルニートが集結。』",
-      "date": "2018/09/23"
     },
     {
       "name": "由比ヶ浜結衣生誕2018 - 非公式サイト",
@@ -115,6 +115,29 @@
       "thumb": "./images/product/chocolate-cake.png",
       "description": "僕が作ったCSS Animation作品をまとめたサイト",
       "date": "2018/03/22"
+    }
+  ],
+  "matome": [
+    {
+      "name": "CSSアニメーションを使った状態変化パターンの提案",
+      "link": "https://twitter.com/i/moments/1068380001433661440",
+      "thumb": "./images/product/css-animation-state-matome.png",
+      "description": "CSSアニメーションを使ったコンポーネント単位の状態変化パターンの提案を投稿してます。",
+      "date": "2018/11/30 ~"
+    },
+    {
+      "name": "素のHTML5Canvasで遊ぶ",
+      "link": "https://twitter.com/i/moments/1063741879752187904",
+      "thumb": "./images/product/html5canvas-matome.png",
+      "description": "ライブラリを使わずにHTML5Canvasで遊ぶ",
+      "date": "2018/11/30 ~"
+    },
+    {
+      "name": "CSSアニメーションまとめ",
+      "link": "https://twitter.com/i/moments/1059704036906024965",
+      "thumb": "./images/product/css-animation-matome.png",
+      "description": "過去にCSSアニメーションで作った作品をまとめました。",
+      "date": "2018/11/30 ~"
     }
   ],
   "lib": [

@@ -70,6 +70,22 @@ export default class ProfilePage extends Component {
             })}
           </section>
 
+          <h2 className="page__sub-title">子作品まとめ</h2>
+          <section className="product-page__content">
+            {products.matome.map((img, key) => {
+              return (
+                <a className="content" href={img.link} key={key} target="_blank" rel="noopener noreferrer">
+                  <div className="inner">
+                    <img src={img.thumb} alt={img.name} />
+                    <h4 className="title">{img.name}</h4>
+                    <p className="description">{img.description}</p>
+                    <small className="date">{img.date}</small>
+                  </div>
+                </a>
+              )
+            })}
+          </section>
+
           <h2 className="page__sub-title">イラスト</h2>
           <section className="product-page__content">
             {products.illust.map((img, key) => {
