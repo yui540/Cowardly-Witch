@@ -59,6 +59,7 @@ module.exports = {
     new ExtractTextPlugin('../stylesheets/style.css')
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: `${ __dirname }/public`,
     port: 3000,
     open: true
