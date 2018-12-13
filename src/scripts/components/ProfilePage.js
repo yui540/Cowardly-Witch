@@ -44,9 +44,10 @@ export default class ProfilePage extends Component {
               <h4>誕生日</h4><p>1996/11/09 - 22歳</p>
               <h4>特徴</h4><p>病弱・臆病・ポンコツ・精神不安定</p>
               <h4>行動</h4><p>ずっとぐーたらしてる</p>
-              <h4>好きな人・キャラ</h4><p>由比ヶ浜結衣, ミライアカリ, さユり, ナナヲアカリ, loundraw, 寺田てら, オーイシマサヨシ</p>
+              <h4>好きな作品</h4><p>ゴブリンスレーヤー, やはり俺の青春ラブコメはまちがっている。, 五等分の花嫁</p>
+              <h4>好きな人・キャラ</h4><p>丹羽孝希, 由比ヶ浜結衣, ミライアカリ, さユり, ナナヲアカリ, loundraw, 寺田てら, オーイシマサヨシ</p>
               <h4>好きな技術</h4><p>JavaScript, CSS, HTML5Canvas, WebGL, Electron</p>
-              <h4>好きな食べ物</h4><p>和菓子, 駄菓子, 肉じゃが, チョコレート</p>
+              <h4>好きな食べ物</h4><p>和菓子, 駄菓子, 肉じゃが, チョコレート, あん饅</p>
               <h4>Kyash</h4><p>yui540</p>
               <h4 className="last">FANBOX</h4><p className="lastname"><a href="https://www.pixiv.net/fanbox/creator/16972511" target="_blank" rel="noopener noreferrer">yui540を応援する</a></p>
             </div>
@@ -57,12 +58,15 @@ export default class ProfilePage extends Component {
           <h2 className="page__sub-title">お仕事のご依頼</h2>
           <section className="profile-page__job">
             <p>
-              やっはろー！<br />
-              実は個人でもお仕事を受け付けております。<br />
-              LP,同人サイト,ポートフォリオサイトなどの<br />
-              制作をお手伝いさせていただきます。（ペライチのWebページの場合、6万〜8万円を目安）<br />
-              お仕事のご依頼は、Twitterとかで<br />
-              DM飛ばしてね。
+              <s>
+                やっはろー！<br />
+                実は個人でもお仕事を受け付けております。<br />
+                LP,同人サイト,ポートフォリオサイトなどの<br />
+                制作をお手伝いさせていただきます。（ペライチのWebページの場合、6万〜8万円を目安）<br />
+                お仕事のご依頼は、Twitterとかで<br />
+                DM飛ばしてね。
+              </s>
+              現在、お仕事は受け付けておりません。
             </p>
             <a className="link-btn" rel="noopener noreferrer" href="https://twitter.com/yui540" target="_blank">
               <img src={job} alt="お仕事のご依頼" />
