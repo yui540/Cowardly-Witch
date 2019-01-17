@@ -82,6 +82,13 @@
   ],
   "design": [
     {
+      "name": "palette - パレット",
+      "link": "https://palette.yui540.graphics",
+      "thumb": "./images/product/palette.png",
+      "description": "過去に作品で使ってきた色をまとめたサイトです。",
+      "date": "2018/01/17 ~"
+    },
+    {
       "name": "夜空ノ贈リ物",
       "link": "https://yozora.magical-girl.site",
       "thumb": "./images/product/yozora.png",
@@ -125,13 +132,6 @@
     }
   ],
   "matome": [
-    {
-      "name": "palette - パレット",
-      "link": "https://palette.yui540.graphics",
-      "thumb": "./images/product/palette.png",
-      "description": "過去に作品で使ってきた色をまとめたサイトです。",
-      "date": "2018/01/17 ~"
-    },
     {
       "name": "CSSアニメーションを使った状態変化パターンの提案",
       "link": "https://twitter.com/i/moments/1068380001433661440",
